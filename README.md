@@ -6,40 +6,40 @@ There are many ways to solve data problems. Some problems can't be solved and th
 
 ## Issues that are your source's problem first
 
-* [Absent/null values](#)      
-* [Zeros for absent values](#)      
-* [Missing data](#)      
-* [Duplicates](#)      
-* [Inconsistent spelling](#)      
-* [Inconsistent name order](#)      
-* [Inconsistent date formats](#)      
-* [Unspecified units](#)      
-* [Badly chosen categories](#)      
-* [Ambiguous field names](#)      
-* [Undocumented provenance](#)   
+* [Absent/null values](#absentnull-values)      
+* [Zeros for absent values](#zeros-for-absent-values)      
+* [Missing data](#missing-data)      
+* [Duplicates](#duplicates)      
+* [Inconsistent spelling](#inconsistent-spelling)      
+* [Inconsistent name order](#inconsistent-name-order)      
+* [Inconsistent date formats](#inconsistent-date-formats)      
+* [Unspecified units](#unspecified-units)      
+* [Badly chosen categories](#badly-chosen-categories)      
+* [Ambiguous field names](#ambiguous-field-names)      
+* [Undocumented provenance](#undocumented-provenance)   
 * [Suspicious numbers](#suspicious-numbers)      
 * [Over-aggregation](#over-aggregation)          
-* [Differs from published aggregates](#)      
-* [Differs from observed distribution](#)      
-* [65536 rows](#)      
-* [Dates in 1900 or 1904](#)      
-* [Text converted to numbers](#)      
+* [Differs from published aggregates](#differs-from-published-aggregates)      
+* [Differs from observed distribution](#differs-from-observed-distribution)      
+* [65536 rows](#65536-rows)      
+* [Dates in 1900 or 1904](#dates-in-1900-or-1904)      
+* [Text converted to numbers](#text-converted-to-numbers)      
 
 ## Issues that are your problem first
 
 * [Encoding problems](#encoding-problems)        
 * [Under-aggregation](#under-aggregation)        
 * [Human data entry](#human-data-entry)          
-* [Aggregations of null values](#)      
-* [Non-random sample](#)      
-* [Large margin of error](#)      
-* [Biased sample](#)      
-* [Evidence of manual editing](#)      
-* [Inflation](#)      
-* [Natural/seasonal variation](#)
-* [Manipulated timeframe](#)      
-* [Manipulated reference point](#)   
-* [Undocumented provenance](#)    
+* [Aggregations of null values](#aggregations-of-null-values)      
+* [Non-random sample](#non-random-sample)      
+* [Large margin of error](#large-margin-of-error)      
+* [Biased sample](#biased-sample)      
+* [Evidence of manual editing](#evidence-of-manual-editing)      
+* [Inflation](#inflation)      
+* [Natural/seasonal variation](#naturalseasonal-variation)
+* [Manipulated timeframe](#manipulated-timeframe)      
+* [Manipulated reference point](#manipulated-reference-point)   
+* [Undocumented provenance](#undocumented-provenance)    
 
 ## Issues you should take to a programmer first
 
@@ -48,14 +48,14 @@ There are many ways to solve data problems. Some problems can't be solved and th
 
 ## Issues you should raise with another expert first
 
-* [Untrustworthy author](#)   
-* [Opaque process](#)      
-* [False precision](#)  
+* [Untrustworthy author](#untrustworthy-author)   
+* [Opaque process](#opaque-process)      
+* [False precision](#false-precision)  
 * [Inexplicable outliers](#inexplicable-outliers)
-* [Index masks underlying variation](#)       
-* [P-hacking](#)        
-* [Benford's Law fails](#)  
-* [Too good to be true](#)       
+* [Index masks underlying variation](#index-masks-underlying-variation)       
+* [P-hacking](#p-hacking)        
+* [Benford's Law fails](#benfords-law-fails)  
+* [Too good to be true](#too-good-to-be-true)       
 
 ## Detailed list of problems
 
