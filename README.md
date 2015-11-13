@@ -61,38 +61,37 @@ There are many ways to solve data problems. Some problems can't be solved and th
 
 ### Absent/null values
 
-TKTK
+Beware blank or "null" values in any dataset unless you are certain you know what they mean. Was data for that year never collected? Did a survey respondent refuse to answer? Did the creator of the data simply not know that person's birthdate?
+
+Anytime you're working with data that has missing values you should ask yourself: "Do I know what the absence of this data means?" If the answer is no, you should ask your source.
 
 ### Zeros for absent values
 
-TKTK
+Worse than missing values is when an arbitrary value is used instead. This can be the result of a human not thinking through the implications or it can happen as the result of automated processes that simply don't know how to handle null values. In either case if you see zeros in a series of numbers you should ask yourself if that values is really the number `0` or if it just means "nothing".
 
 ### Missing data
 
-TKTK
+Sometimes data is missing and you know because you know something about the universe of what the data purports to be about. If you have a dataset of baseball players and it doesn't have Mickey Mantle in it, something is probably amiss. Trust your intuition if something seems wrong and double-check with your source. The universe of your data might be smaller than you think.
 
 ### Duplicates
 
-TKTK
+If the same row appears in your dataset twice you should find out why. Sometimes it need not be a whole row. Campaign finance data frequently includes "amendments" that use the same unique identifiers as the original transaction. If you don't know that you may end up using both the original transaction and the amended transaction in your calculations. If something that seems like it should be unique isn't, find out why.
 
 ### Inconsistent spelling
 
-TKTK
+Spelling is one of the most obvious ways of telling if data has been compiled by hand. Don't just look at names—those can be the hardest place to detect spelling errors. Look for places where city names or states aren't consistent. If you find those, you can be pretty sure the data was compiled or edited by hand and that is always, always a reason to be skeptical of it. Data that has been edited by hand is the most likely to have mistakes.
 
 ### Inconsistent name order
 
-TKTK
+Does your data have Middle Eastern or East Asian names in it? Are you sure the surnames are always in the same place? Is it possible anyone in your dataset [uses a mononym](https://en.wikipedia.org/wiki/Indonesian_names#Indonesian_naming_system)? These are the sorts of things that data creators habitually get wrong.
 
 ### Inconsistent date formats
 
-TKTK
+`10/9/15` and `9/10/15`: which date is in September? If the first one was written by a European and the second one by an American then they both are. Without knowing the history of the data you can't know for sure. Know where your data came from and that it was produced consistently.
 
 ### Unspecified units
 
-TKTK
-
-currency
-weight
+Neither `weight` nor `cost` conveys any information about the unit of measurement. Never assume that data produced by in the United States is in `lbs` and `$`. If data doesn't spell out it's units, go back to your source and find out. Even if it does spell out it's units always be wary of meanings that may have shifted over time. A dollar in 2010 is not a dollar today.
 
 ### Badly chosen categories
 
