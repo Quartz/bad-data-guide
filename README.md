@@ -2,14 +2,18 @@
 
 **An exhaustive reference to the problems seen in real-world data along with suggestions on how to resolve them.**
 
-There are many ways to solve data problems. Some problems can't be solved and that means you shouldn't use the data. Other problems can't be solved, but you should still use the data with appropriate caveats. In order to allow for these ambiguities, this guide is organized by who you should take the problem to *first*. In the details you'll sometimes find suggestions for what to do if the first suggestion can't help you.
+As a reporter your world is full of data. And that data is full of problems. This guide presents a thorough description of many of the kinds of problems that crop up over and over again in the many kinds of data journalists work with.
 
-You can not possibly review every dataset you work with for all of these problems. You would never get anything published. However, by familiarizing yourself with the sorts of issues you are likely to encounter you will have a better chance of spotting a possible problem before it causes you to make a mistake.
+Most of these problems can be solved. Some problems can't be solved and that means you shouldn't use the data. Other problems can't be solved, but you should still use the data with care. In order to allow for these ambiguities, this guide is organized by who you should take the problem to *first*: your source, a programmer, an expert, etc. In the details of the problem you may also find suggestions for what to do if the first suggestion can't help you.
+
+You can not possibly review every dataset you work with for all of these problems. If you tried you would never get anything published. However, by familiarizing yourself with the sorts of issues you are likely to encounter you will have a better chance of identifying an issue before it causes you to make a mistake.
+
+If you have questions about this guide please email [Chris](mailto:c@qz.com). Good luck!
 
 ## Issues that are your source's problem first
 
 * [Absent/null values](#absentnull-values)      
-* [Zeros for absent values](#zeros-for-absent-values)      
+* [Zeros for absent values](#zer8os-for-absent-values)      
 * [Missing data](#missing-data)      
 * [Duplicates rows or values](#duplicates-rows-or-values)      
 * [Inconsistent spelling](#inconsistent-spelling)      
