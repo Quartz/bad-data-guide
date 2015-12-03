@@ -222,6 +222,8 @@ TKTK
 
 TKTK
 
+## Issues you should take to a programmer first
+
 ### Data is aggregated to the wrong categories or geographies
 
 TKTK
@@ -229,6 +231,8 @@ TKTK
 ### Data is in scanned documents
 
 TKTK
+
+## Issues you should raise with third-party expert first
 
 ### Author is untrustworthy
 
