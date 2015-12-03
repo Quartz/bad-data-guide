@@ -37,9 +37,10 @@ If you have questions about this guide please email [Chris](mailto:c@qz.com). Go
 * [Text is garbled](#text-is-garbled)        
 * [Data is too specific](#data-is-too-specific)        
 * [Data was entered by humans](#data-was-entered-by-humans)          
-* [Aggregations were computed on null values](#aggregations-were-computed-on-null-values)      
+* [Aggregations were computed on missing values](#aggregations-were-computed-on-missing-values)      
 * [Sample is not random](#sample-is-not-random)      
 * [Margin-of-error is too large](#margin-of-error-is-too-large)      
+* [Margin-of-error is unknown](#margin-of-error-is-unknown)
 * [Sample is biased](#sample-is-biased)      
 * [Data has been manually edited](#data-has-been-manualy-edited)      
 * [Inflation skews the data](#inflation-skews-the-data)      
@@ -61,7 +62,7 @@ If you have questions about this guide please email [Chris](mailto:c@qz.com). Go
 * [An index masks underlying variation](#an-index-masks-underlying-variation)       
 * [Results have been p-hacked](#results-have-been-p-hacked)        
 * [Benford's Law fails](#benfords-law-fails)  
-* [It is too good to be true](#it-is-too-good-to-be-true)       
+* [It's too good to be true](#its-too-good-to-be-true)       
 
 # Detailed list of all problems
 
@@ -171,15 +172,17 @@ This is the opposite of [Data is too coarse](#data-is-too-coarse). In this case 
 
 Data can be aggregated by using the Pivot Table feature of Excel or Google Docs, by using a SQL database or by writing custom code. Pivot Tables are a fabulous tool that every reporter should learn, but they do have their limits. For exceptionally large datasets or aggregations to unusual groups you should ask a programmer and they can craft a solution that's easier to verify and reuse.
 
-See also: [Data is aggregated to the wrong groups](#).
+See also: [Data is aggregated to the wrong categories or geographies](#data-is-aggregated-to-the-wrong-categories-or-geographies).
 
 ### Data was entered by humans
 
 Human data entry is such a common problem that symptoms of it are mentioned in at least 10 of the other issues described here. There is no worse way to screw up data than to let a single human type it in. For example, I once acquired the complete dog licensing database for Cook County, Illinois. Instead of requiring the person registering their dog to choose a breed from a list, the creators of the system had simply given them a text field to type into. As a result this database contained at least 250 spellings of `Chihuahua`. Even with the best tools available, data this messy can't be saved. It is effectively meaningless. It's not that important with dog data, but you don't want it happening with soldiers or stock markets. Beware human entered data.
 
-### Aggregations were computed on null values
+### Aggregations computed on missing values
 
-TKTK
+Imagine a dataset with 100 rows and a column called `cost`. In 50 of the rows the `cost` column is blank. What is the average of that column? Is it `sum_of_cost / 50` or `sum_of_cost / 100`? There is no one definitive answer. In general, if you're going to compute aggregates on columns that are missing data, you can safely do so by filtering out the missing rows first, but be careful not to compare aggregates from two different columns where different rows were missing values! In some cases the missing values might also be legitimately interpreted as `0`. If you're not sure, ask an expert or just don't do it.
+
+This is an error you can make in your analysis, but it's also an error that others can make and pass on to you, so watch out for it if data comes to you with aggregates already computed.
 
 ### Sample is not random
 
@@ -189,23 +192,27 @@ A non-random sampling error occurs when a survey or other sampled dataset either
 
 TKTK
 
+### Margin-of-error is unknown
+
+TKTK
+
 ### Sample is biased
 
-Like a [non-random sample](#non-random-sample), a bias sample results from a lack of care with how the sampling is executed. Or, from willfully misrepresenting it. A sample might be biased because it was conducted on the internet and poorer people don't use the internet as frequently as the rich. Surveys must be carefully weighted to ensure they cover proportional segments of any population that could skew the results. It's almost impossible to do this perfectly so it it often done wrong.
+Like [a sample that is not random](#sample-is-not-random), a bias sample results from a lack of care with how the sampling is executed. Or, from willfully misrepresenting it. A sample might be biased because it was conducted on the internet and poorer people don't use the internet as frequently as the rich. Surveys must be carefully weighted to ensure they cover proportional segments of any population that could skew the results. It's almost impossible to do this perfectly so it it often done wrong.
 
 ### Data has been manually edited
 
-Manual editing is almost the same as [human data entry](#human-data-entry) except that it happens after the fact and often with good intentions. In fact, data is often manually edited in an attempt to fix data that was originally entered by humans. Problem start to creep in when the person doing the editing doesn't have complete knowledge of the original data. I once saw someone spontaneously "correct" a name in a dataset from `Smit` to `Smith`. Was that person's name really `Smith`? I don't know, but I do know that data is now a problem. Without a record of that change, it's impossible to verify what it should be.
+Manual editing is almost the same as [data that was entered by humans](#data-was-entered-by-humans) except that it happens after the fact and often with good intentions. In fact, data is often manually edited in an attempt to fix data that was originally entered by humans. Problems start to creep in when the person doing the editing doesn't have complete knowledge of the original data. I once saw someone spontaneously "correct" a name in a dataset from `Smit` to `Smith`. Was that person's name really `Smith`? I don't know, but I do know that data is now a problem. Without a record of that change, it's impossible to verify what it should be.
 
-Issues with manual editing are one reason why you always want to ensure your data has [well-documented provenance](#undocumented-provenance). A lack of provenance can be a good indication that someone may have monkeyed with it. Academics often get data from the government, monkey with it and then redistribute it to journalists. Without any record of their changes it's impossible to know if the changes they made were justified. Whenever feasible always try to get the *primary source* or at least the oldest version you can and then do your own analysis from that.
+Issues with manual editing are one reason why you always want to ensure your data has [well-documented provenance](#provenance-is-not-documented). A lack of provenance can be a good indication that someone may have monkeyed with it. Academics often get data from the government, monkey with it and then redistribute it to journalists. Without any record of their changes it's impossible to know if the changes they made were justified. Whenever feasible always try to get the *primary source* or at least the oldest version you can and then do your own analysis from that.
 
 ### Inflation skews the data
 
-TKTK
+Currency inflation means that over time money changes in value. There is no way to tell if numbers have been "inflation adjusted" just by looking at them. If you get data and you aren't sure if it's been adjusted check with your source. If it hasn't been you'll likely want to perform the adjustment. This [inflation adjuster](http://inflation-adjust.herokuapp.com/) is a good place to start.
 
 ### Natural/seasonal variation skews the data
 
-TKTK
+Many types of data fluctuate naturally due to some underlying forces. The best known example of this is employment fluctuating with the seasons. Economists have developed a variety of methods of compensating for this variation. The details of those methods aren't particularly important, but it is important that you know if the data you're using has been "seasonally adjusted". If it hasn't and you want to compare employment from month to month you will probably want to get adjusted data. (Adjusting it yourself is much harder than with inflation.)
 
 ### The timeframe has been manipulated
 
@@ -225,7 +232,7 @@ TKTK
 
 ### Author is untrustworthy
 
-TKTK
+Sometimes the only data you have is from a source you would rather not rely on. In some situations that's just fine. The only people who know how many guns are made are gun manufacturers. However, if you have data from a questionable maker always check it with another expert. Better yet, check it with two or three. Don't publish data from a biased source unless you have substantial corroborating evidence.
 
 ### Collection process is opaque
 
@@ -251,9 +258,9 @@ TKTK
 
 ### Benford's Law fails
 
-TKTK
+[Benford's Law](https://en.wikipedia.org/wiki/Benford's_law) is a theory which states that small digits (1, 2, 3) appear at the beginning of numbers much more frequently than large digits (7, 8, 9). In theory Benford's Law can be used to detect anomalies in accounting practices or election results, though in practice it should be used with a great deal of care. If you suspect a dataset has been created or modified to deceive, Benford's Law can be an excellent first check, but you should always check your results with an expert before concluding your data has been manipulated.
 
-### It is too good to be true
+### It's too good to be true
 
 There is no global dataset of public opinion. Nobody knows the exact number of people living in Siberia. Crime statistics aren't comparable across borders. The US government is not going to tell you how much fissile material it keeps on hand.
 
