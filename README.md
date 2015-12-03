@@ -123,7 +123,11 @@ Each of these numbers has an indication of a particular error made by either a h
 
 ### Over-aggregation
 
-TKTK
+Over-aggregation is what we call it when you have data that's been "rolled up" too much. You've got states and you need counties. You've got employers and you need employees. They gave you years, but you want months.
+
+Data can not be disaggregated once it's been put together. If you're given data that's too coarse, you'll need to ask your source for something more specific. They may not have it. If they do have it they may not be able or willing to give it to you. There are many federal datasets that can't be accessed at the local level to protect the privacy of individuals who might be uniquely identified by them. (For example, a single Somali national living in western Texas.) All you can do is ask.
+
+One thing you should never ever do is divide the yearly data you have by 12 and call it the "average per month". That is **always** incorrect. Don't do it.
 
 ### Differs from published aggregates
 
@@ -155,7 +159,9 @@ In the vast majority of cases your text editor or spreadsheet application will f
 
 ### Under-aggregation
 
-TKTK
+Under aggregation is the opposite of [Over-aggregation](#over-aggregation). In this case you've got counties, but you want states or you've got months but you want years. Fortunately this is usually pretty straightforward. In general, data can be summarized by using the Pivot Table feature of Excel or Google Docs, by using a SQL database or by writing custom code. Pivot Tables are a fabulously useful tool that every reporter should learn, however, they do have their limits. For exceptionally large datasets or aggregations to unusual groups you should ask a programmer and they can code a solution that's easier to verify and reuse.
+
+See also: [Wrong aggregation](#wrong-aggregation).
 
 ### Human data entry  
 
@@ -229,7 +235,9 @@ TKTK
 
 ### Index masks underlying variation
 
-TKTK
+Analysts who want to follow the trend of an issue often create indices of various values that they can track. There is nothing intrinsically wrong with using an index. They can have great explanatory power. However, it's important to be cautious of indices that combine disparate measures. For example, the United Nations [Gender Inequality Index](p.org/en/content/gender-inequality-index-gii) combines several measures related to women's progress toward equality.
+
+One of the measures used in the GII is "representation of women in parliament". Two countries in the world have law's mandating gender representation in their parliaments: China and Pakistan. As a result these two countries perform far better in the index than countries that are similar in all other ways. Is this right? Maybe so, but it certainly isn't obvious. The GII and similar indices should always be used with careful analysis to ensure their underlying variables don't swing the index in unexpected ways.
 
 ### P-hacking
 
@@ -241,4 +249,6 @@ TKTK
 
 ### Too good to be true
 
-TKTK
+There is no global dataset of public opinion. Nobody knows the exact number of people living in Siberia. Crime statistics aren't comparable across borders. The US government is not going to tell you how much fissile material it keeps on hand.
+
+Beware any data that purports to represent something that you could not possibly know. It's not data. It's somebody's estimate and it's probably wrong.
