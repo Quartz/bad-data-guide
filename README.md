@@ -225,11 +225,21 @@ See also:
 
 ### Margin-of-error is too large
 
-TKTK
+I know of no other single issue that causes more reporting errors than the unreflective usage of numbers with very large margins-of-error. MOE is usually associated with survey data. The most likely place a reporter encounters it is when using polling data or the US Census Bureau's [American Community Survey](https://www.census.gov/programs-surveys/acs/) data. The MOE is a measure of the range of possible true values. It may be expressed as a number (`400 +/- 80`) or as a percentage of the whole (`400 +/- 20%`). The smaller the relevant population, the larger the MOE will be. For example, according to the 2014 5-year ACS estimates, the number of Asians living in New York is `1,106,989 +/- 3,526` (0.3%). The number of Filipinos is `71,969 +/- 3,088` (4.3%). The number of Samoan's is `203 +/- 144`. (71%)
+
+The first two numbers are safe to report. The third number should never be used in published reporting. There is no one rule about when a number is not accurate enough to use, but as a rule of thumb, you should be cautious about using any number with a MOE over 10%.
+
+See also:
+
+* [Margin-of-error is unknown](#margin-of-error-is-unknown)
 
 ### Margin-of-error is unknown
 
-TKTK
+Sometimes the problem isn't that the margin of error is [too large](#margin-of-error-is-too-large), it's that nobody ever bothered to figure out what it was in the first place. This is one problem with unscientific polls. Without computing an MOE, it is impossible to know how accurate the results are. As a general rule, anytime you have data that's from a survey you should ask for what the MOE is. If the source can't tell you, that data probably isn't worth using for any serious analysis.
+
+See also:
+
+* [Margin-of-error is too large](#margin-of-error-is-too-large)  
 
 ### Sample is biased
 
