@@ -47,7 +47,7 @@ If you have questions about this guide please email [Chris](mailto:c@qz.com). Go
 * [Inflation skews the data](#inflation-skews-the-data)      
 * [Natural/seasonal variation skews the data](#nationalseasonal-variation-skews-the-data)
 * [Timeframe has been manipulated](#timeframe-has-been-manipulated)      
-* [Frame of reference has been manipulated](#frame-of-refernece-has-been-manipulated)
+* [Frame of reference has been manipulated](#frame-of-reference-has-been-manipulated)
 
 ## Issues you should take to a programmer first
 
@@ -223,11 +223,21 @@ Many types of data fluctuate naturally due to some underlying forces. The best k
 
 ### Timeframe has been manipulated
 
-TKTK
+A source can accidentally or intentionally misrepresent the world by giving you data that stops or starts at a specific time. For a potent example see 2015's widely reported "national crime wave". There was no crime wave. What there was a serious of spikes in particular cities when compared to just the last few years. Had journalists examined a wider timeframe they would have seen that violent crime was higher virtually everywhere in the US ten years before. And twenty years before it was nearly double.
+
+If you have data that covers a limited timeframe try to avoid starting your calculations with the very first time period you have data for. If you start a few years (or months or days) into the data you can have confidence that you aren't making a comparison which would be invalidated by having a single additional data point.
+
+See also: [Frame of reference has been manipulated](#frame-of-reference-has-been-manipulated)
 
 ### Frame of reference has been manipulated
 
-TKTK
+Crime statistics are often manipulated for political purposes by comparing to a year when crime was very high. This can expressed either as a change (down `60%` since 2004) or via an index (`40`, where 2004 = 100). In either of these cases, 2004 may or may not be an appropriate year for comparison. It could have been an unusually high crime year.
+
+This also happens when comparing places. If I want to make one country look bad, I simply express the data about it relative to whichever country which is doing the best.
+
+This problem tends to crop up in subjects where people have a strong confirmation bias. ("Just as I thought, crime is up!") Whenever possible try comparing rates from several different starting points to see how the numbers shift. And whatever you do, *don't use this technique yourself* to make a point you think is important. That's inexcusable.
+
+See also: [Timeframe has been manipulated](#timeframe-has-been-manipulated)  
 
 ## Issues you should take to a programmer first
 
@@ -255,7 +265,13 @@ Sometimes the only data you have is from a source you would rather not rely on. 
 
 ### Collection process is opaque
 
-TKTK
+Data is created by humans. Even when it's produced by machines, those machines are implementing processes created by humans. It's very easy for false assumptions, errors or outright falsehoods to be introduced into these processes. For this reason it's important that data be collected through transparent processes.
+
+It's rare that you'll know exactly how a dataset was gathered, but indications of a problem can include numbers that [assert unrealistic precision](#data-asserts-unrealistic-precision) and data that is [is too good to be true](#its-too-good-to-be-true). Sometimes the origin story may just be fishy: How did such-and-such white academic interview 50 active gang members from the south side of Chicago?
+
+If the way the data was gathered seems questionable and your source can't offer your [ironcald provenance](#provenance-is-not-documented) ] then you should always check with another expert that the data could reasonably have been collected in the way it was described.
+
+See also: [Data asserts unrealistic precision](#data-asserts-unrealistic-precision), [It's too good to be true](#its-too-good-to-be-true), [Provenance is not documented](#provenance-is-not-documented)  
 
 ### Data asserts unrealistic precision
 
