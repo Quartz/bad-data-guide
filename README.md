@@ -45,7 +45,7 @@ If you have questions about this guide please email [Chris](mailto:c@qz.com). Go
 * [Sample is biased](#sample-is-biased)      
 * [Data has been manually edited](#data-has-been-manualy-edited)      
 * [Inflation skews the data](#inflation-skews-the-data)      
-* [Natural/seasonal variation skews the data](#nationalseasonal-variation-skews-the-data)
+* [Natural/seasonal variation skews the data](#naturalseasonal-variation-skews-the-data)
 * [Timeframe has been manipulated](#timeframe-has-been-manipulated)      
 * [Frame of reference has been manipulated](#frame-of-reference-has-been-manipulated)
 
