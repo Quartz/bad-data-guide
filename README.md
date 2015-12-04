@@ -103,6 +103,10 @@ Does your data have Middle Eastern or East Asian names in it? Are you sure the s
 
 Neither `weight` nor `cost` conveys any information about the unit of measurement. Don't be too quick to assume that data produced by in the United States is in pounds and dollars. Scientific data will often be in metric. For prices may be in their local currency. If data doesn't spell out it's units, go back to your source and find out. Even if it does spell out it's units always be wary of meanings that may have shifted over time. A dollar in 2010 is not a dollar today. And a [ton](https://en.wikipedia.org/wiki/Short_ton) is not a [ton](https://en.wikipedia.org/wiki/Long_ton) nor a [tonne](https://en.wikipedia.org/wiki/Tonne).
 
+See also:
+
+* [Field names are ambiguous](#field-names-are-ambiguous)   
+
 ### Categories are badly chosen
 
 The most common case of this is data which purports to be `true` or `false`, but really isn't. This often happens with surveys where `refused` or `no answer` are also valid—and meaningful—values. Another common problem is the usage of any kind of `other` category. If the categories in a dataset are a bunch of countries and an `other`, what does that mean? Does it mean that the person collecting the data didn't know the right answer? Were they in international waters? Ex-patriots? Refugees?
@@ -117,6 +121,10 @@ What is a `residence`? Is it where someone lives or where they pay taxes? Is it 
 
 Data can are made by a variety of kinds of individuals and organizations including businesses, governments, nonprofits and nut-job conspiracy theorists. That data can be gathered in many different ways including surveys, sensors and satellites. It may be typed, tapped or scribbled. Knowing where your data came from can give you a huge amount of insight into its limitations. Survey data, for example, is rarely exhaustive. Sensors vary in their accuracy. Governments are often disinclined to give you unbiased information. Data from a war zone may have a strong geographical bias. To make things situation worse, these sources are often daisy-chained together. Academics sometimes re-distribute data they got from the government. Data that is written by a doctor may be rekeyed by a nurse. Every stage in that chain is an opportunity for error. Know where your data came from.
 
+See also:
+
+* [Units are not specified](#units-are-not-specified)
+
 ### Suspicious numbers are present
 
 If you see any of these numbers in your data, treat them with an abundance of caution:
@@ -129,6 +137,11 @@ If you see any of these numbers in your data, treat them with an abundance of ca
 
 Each of these numbers has an indication of a particular error made by either a human or a computer. If you see them, ensure they actually mean what you think they mean!
 
+See also:
+
+* [Spreadsheet has 65536 rows](#spreadsheet-has-65536-rows)      
+* [Spreadsheet has dates in 1900 or 1904](#spreadsheet-has-dates-in-1900-or-1904)  
+
 ### Data is too coarse
 
 You've got states and you need counties. You've got employers and you need employees. They gave you years, but you want months. In many cases we get data that has been aggregated too much for our purposes.
@@ -137,15 +150,16 @@ Data can not be disaggregated once it's been put together. If you're given data 
 
 One thing you should never ever do is divide the yearly data you have by 12 and call it the "average per month". That is **always** incorrect. Don't do it.
 
+See also:
+
+* [Data is too granular](#data-is-too-granular)
+* [Data is aggregated to the wrong categories or geographies](#data-is-aggregated-to-the-wrong-categories-or-geographies)
+
 ### Totals differ from published aggregates
 
 Imagine that after a long FOIA fight you receive a "complete" list of incidents of police use-of-force. You open it up and discover it has 2,467 rows. Great, time to report it out. Not so fast. Before you publish anything from that dataset go find the last time that police chief went on the record about his departments use of force. You may find that in an interview six weeks earlier he said "less than 2,000 times" or that he named a specific number and it doesn't match your dataset.
 
 These sorts of discrepancies between published statistics and raw data can be a very great source of leads. Often times the answer will be simple. For instance, the data may not cover the same time period he was speaking about. But sometimes you'll catch them in a lie. Either way, you should make sure the published numbers match the totals for the data you're given.
-
-### Totals differ from observed distribution
-
-Sometimes you just know data is fishy. One of the most common cases where this happens is when you get a dataset that doesn't seem to fit reality. Imagine a dataset of
 
 ### Spreadsheet has 65536 rows
 
@@ -183,6 +197,7 @@ Data can be aggregated by using the Pivot Table feature of Excel or Google Docs,
 
 See also:
 
+* [Data is too coarse](#data-is-too-coarse)
 * [Data is aggregated to the wrong categories or geographies](#data-is-aggregated-to-the-wrong-categories-or-geographies).
 
 ### Data was entered by humans
@@ -195,9 +210,18 @@ Imagine a dataset with 100 rows and a column called `cost`. In 50 of the rows th
 
 This is an error you can make in your analysis, but it's also an error that others can make and pass on to you, so watch out for it if data comes to you with aggregates already computed.
 
+See also:
+
+* [Values are missing](#values-are-missing)      
+* [Zeros replace missing values](#zeros-replace-missing-values)   
+
 ### Sample is not random
 
 A non-random sampling error occurs when a survey or other sampled dataset either intentionally or accidentally fails to cover the entire population. This can happen for a variety of reasons ranging from time-of-day to the respondent's native language and is a common source of error in sociological research. It can also happen for less obvious reasons, such as when a researcher thinks they have a complete dataset and chooses to work with only part of it. If the original dataset was incomplete for any reason then any conclusions drawn from their sample will be incorrect.
+
+See also:
+
+* [Sample is biased](#sample-is-biased)    
 
 ### Margin-of-error is too large
 
@@ -211,19 +235,36 @@ TKTK
 
 Like [a sample that is not random](#sample-is-not-random), a bias sample results from a lack of care with how the sampling is executed. Or, from willfully misrepresenting it. A sample might be biased because it was conducted on the internet and poorer people don't use the internet as frequently as the rich. Surveys must be carefully weighted to ensure they cover proportional segments of any population that could skew the results. It's almost impossible to do this perfectly so it it often done wrong.
 
+See also:
+
+* [Sample is not random](#sample-is-not-random)
+
 ### Data has been manually edited
 
 Manual editing is almost the same as [data that was entered by humans](#data-was-entered-by-humans) except that it happens after the fact and often with good intentions. In fact, data is often manually edited in an attempt to fix data that was originally entered by humans. Problems start to creep in when the person doing the editing doesn't have complete knowledge of the original data. I once saw someone spontaneously "correct" a name in a dataset from `Smit` to `Smith`. Was that person's name really `Smith`? I don't know, but I do know that data is now a problem. Without a record of that change, it's impossible to verify what it should be.
 
 Issues with manual editing are one reason why you always want to ensure your data has [well-documented provenance](#provenance-is-not-documented). A lack of provenance can be a good indication that someone may have monkeyed with it. Academics often get data from the government, monkey with it and then redistribute it to journalists. Without any record of their changes it's impossible to know if the changes they made were justified. Whenever feasible always try to get the *primary source* or at least the oldest version you can and then do your own analysis from that.
 
+See also:
+
+* [Provenance is not documented](#provenance-is-not-documented)
+* [Data was entered by humans](#data-was-entered-by-humans)
+
 ### Inflation skews the data
 
 Currency inflation means that over time money changes in value. There is no way to tell if numbers have been "inflation adjusted" just by looking at them. If you get data and you aren't sure if it's been adjusted check with your source. If it hasn't been you'll likely want to perform the adjustment. This [inflation adjuster](http://inflation-adjust.herokuapp.com/) is a good place to start.
 
+See also:
+
+* [Natural/seasonal variation skews the data](#nationalseasonal-variation-skews-the-data)
+
 ### Natural/seasonal variation skews the data
 
 Many types of data fluctuate naturally due to some underlying forces. The best known example of this is employment fluctuating with the seasons. Economists have developed a variety of methods of compensating for this variation. The details of those methods aren't particularly important, but it is important that you know if the data you're using has been "seasonally adjusted". If it hasn't and you want to compare employment from month to month you will probably want to get adjusted data. (Adjusting it yourself is much harder than with inflation.)
+
+See also:
+
+* [Inflation skews the data](#inflation-skews-the-data)
 
 ### Timeframe has been manipulated
 
@@ -279,25 +320,27 @@ Sometimes the only data you have is from a source you would rather not rely on. 
 
 ### Collection process is opaque
 
-Data is created by humans. Even when it's produced by machines, those machines are implementing processes created by humans. It's very easy for false assumptions, errors or outright falsehoods to be introduced into these processes. For this reason it's important that data be collected through transparent processes.
+It's very easy for false assumptions, errors or outright falsehoods to be introduced into these data collection processes. For this reason it's important that methods used be transparent. It's rare that you'll know exactly how a dataset was gathered, but indications of a problem can include numbers that [assert unrealistic precision](#data-asserts-unrealistic-precision) and data that is [is too good to be true](#its-too-good-to-be-true).
 
-It's rare that you'll know exactly how a dataset was gathered, but indications of a problem can include numbers that [assert unrealistic precision](#data-asserts-unrealistic-precision) and data that is [is too good to be true](#its-too-good-to-be-true). Sometimes the origin story may just be fishy: How did such-and-such white academic interview 50 active gang members from the south side of Chicago?
-
-If the way the data was gathered seems questionable and your source can't offer your [ironcald provenance](#provenance-is-not-documented) ] then you should always check with another expert that the data could reasonably have been collected in the way it was described.
+Sometimes the origin story may just be fishy: did such-and-such white academic really interview 50 active gang members from the south side of Chicago? If the way the data was gathered seems questionable and your source can't offer you [ironcald provenance](#provenance-is-not-documented) ] then you should always check with another expert that the data could reasonably have been collected in the way it was described.
 
 See also:
 
+* [Provenance is not documented](#provenance-is-not-documented)  
 * [Data asserts unrealistic precision](#data-asserts-unrealistic-precision)
 * [It's too good to be true](#its-too-good-to-be-true)
-* [Provenance is not documented](#provenance-is-not-documented)  
 
 ### Data asserts unrealistic precision
 
-TKTK
+Outside of hard science, few things are routinely measured with more than two decimal places of accuracy. If a dataset lands on your desk that purports to show a factory's emissions to the 7th decimal place that is a dead giveaway that it was estimated from other values. That in and of itself may not be a problem, but it's important to be transparent about estimates. They are often wrong.
 
 ### There are inexplicable outliers
 
-TKTK
+I recently created a dataset of how long it takes for messages to reach different destinations over the internet. All of the times were in the range from `0.05` to `0.8` seconds, except for three. The other three were all over `5,000` seconds. This is a major red flag that something has gone wrong in the production of the data. In this particular case an error in the code I wrote caused some failures to continue counting while all other messages were being sent and received.
+
+Outliers such as these can dramatically screw up your statistics—especially if you're using averages. Whenever you have a new dataset it is a good idea to take a look at the largest and smallest values and ensure they are in a reasonable range. If the data justifies it you may also want to do a more statistically rigorous analysis using standard deviations or median deviations.
+
+As a side-benefit of doing this work, outliers are often a great way to find story leads. If there really was one country where it took 5000 times as long to send a message over the internet, that would be a great story.
 
 ### An index masks underlying variation
 
@@ -307,7 +350,13 @@ For example, the United Nations [Gender Inequality Index](p.org/en/content/gende
 
 ### Results have been p-hacked
 
-TKTK
+P-hacking is manipulating the threshold at which results are deemed to be statistically significant, so that a study appears to show stronger conclusions than it otherwise would. There has been some [great reporting](http://fivethirtyeight.com/features/science-isnt-broken) on this problem.
+
+If you're going to publish the results of a study you need to understand what the p-value is, what that means and then make an educated decision about whether the results are worth using. Lots and lots of garbage study results make it into major publications because journalists don't understand p-values.
+
+See also:
+
+* [Margin-of-error is too large](#margin-of-error-is-too-large)  
 
 ### Benford's Law fails
 
