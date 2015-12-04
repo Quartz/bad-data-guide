@@ -34,8 +34,9 @@ If you have questions about this guide please email [Chris](mailto:c@qz.com). Go
 
 ## Issues that are your problem first
 
-* [Text is garbled](#text-is-garbled)        
-* [Data is too specific](#data-is-too-specific)        
+* [Text is garbled](#text-is-garbled)
+* [Data is in a PDF](#data-is-in-a-pdf)        
+* [Data is too granular](#data-is-too-granular)        
 * [Data was entered by humans](#data-was-entered-by-humans)          
 * [Aggregations were computed on missing values](#aggregations-were-computed-on-missing-values)      
 * [Sample is not random](#sample-is-not-random)      
@@ -45,8 +46,8 @@ If you have questions about this guide please email [Chris](mailto:c@qz.com). Go
 * [Data has been manually edited](#data-has-been-manualy-edited)      
 * [Inflation skews the data](#inflation-skews-the-data)      
 * [Natural/seasonal variation skews the data](#nationalseasonal-variation-skews-the-data)
-* [The timeframe has been manipulated](#the-timeframe-has-been-manipulated)      
-* [The frame of reference has been manipulated](#the-frame-of-refernece-has-been-manipulated)
+* [Timeframe has been manipulated](#timeframe-has-been-manipulated)      
+* [Frame of reference has been manipulated](#frame-of-refernece-has-been-manipulated)
 
 ## Issues you should take to a programmer first
 
@@ -166,7 +167,13 @@ All letters are represented by computers as numbers. Encoding problems are issue
 
 In the vast majority of cases your text editor or spreadsheet application will figure out the correct encoding, however, if it screws it up you could publishing somebody's name with a weird character in the middle. Your source should be able to tell you what encoding your data is in. In the event they can't there are ways of guessing that are about fairly reliable. Ask a programmer.
 
-### Data is too specific
+### Data is in a PDF
+
+A tremendous amount of data—especially government data—is only available in PDF format. If you have real, textual data inside the PDF then there are several good options for extracting it. (If you've got [scanned documents](#data-is-in-scanned-documents) that's a different problem.) One excellent, free tool is [Tabula](#http://tabula.technology/). However, if you have Adobe Creative Cloud then also have access to Acrobat Pro, which has an excellent feature for exporting tables in PDFs to Excel. Either solution should be able to extract most tabular data from a PDF.
+
+See also: [Data is in scanned documents](#data-is-in-scanned-documents)
+
+### Data is too granular
 
 This is the opposite of [Data is too coarse](#data-is-too-coarse). In this case you've got counties, but you want states or you've got months but you want years. Fortunately this is usually pretty straightforward.
 
@@ -214,11 +221,11 @@ Currency inflation means that over time money changes in value. There is no way 
 
 Many types of data fluctuate naturally due to some underlying forces. The best known example of this is employment fluctuating with the seasons. Economists have developed a variety of methods of compensating for this variation. The details of those methods aren't particularly important, but it is important that you know if the data you're using has been "seasonally adjusted". If it hasn't and you want to compare employment from month to month you will probably want to get adjusted data. (Adjusting it yourself is much harder than with inflation.)
 
-### The timeframe has been manipulated
+### Timeframe has been manipulated
 
 TKTK
 
-### The frame of reference has been manipulated
+### Frame of reference has been manipulated
 
 TKTK
 
@@ -226,11 +233,19 @@ TKTK
 
 ### Data is aggregated to the wrong categories or geographies
 
-TKTK
+Sometimes your data is at about the right level of detail (neither [too coarse](#data-is-too-coarse) nor [too granular](#data-is-too-granular)), but it has been aggregated to different grouping than you want. This classic example of this is data that is aggregated by zip codes that you would prefer to have by city neighborhoods. In many cases this is an impossible problem to solve without getting more granular data from your source, but in some subset of cases the data can be proportionally mapped from one group to another. This must be undertaken only with careful understanding of the [margin-of-error](#margin-of-error-is-too-large) that may be introduced in the process. If you've got data aggregated to the wrong groups, ask a programmer if it is possible to reaggregate it.
+
+See also: [Data is too coarse](#data-is-too-coarse), [Data is too granular](#data-is-too-granular), [Margin-of-error is too large](#margin-of-error-is-too-large)
 
 ### Data is in scanned documents
 
-TKTK
+Thanks to freedom-of-information laws it is frequently the case that governments are required to give you data—even though they really don't want to. A very common tactic in these cases is for them to give you scans or photographs of the pages. These may be actual image files or, more likely, they will be gathered up into a PDF.
+
+It is possible to extract text from images and turn it back into data. This is done through a process called optical-character recognition (OCR). Modern OCR can often be nearly 100% accurate, but it very much depends on the nature of the document. Anytime you use OCR to extract data you will want to have a process for validating the results match the original.
+
+There are many websites you can upload a document to for OCR, but there are also free tools that a programmer may have able to tune for your specific documents. Ask them what the best strategy is for the particular documents you have.
+
+See also: [Data is in a PDF](#data-is-in-a-pdf)
 
 ## Issues you should raise with third-party expert first
 
@@ -252,9 +267,9 @@ TKTK
 
 ### An index masks underlying variation
 
-Analysts who want to follow the trend of an issue often create indices of various values that they can track. There is nothing intrinsically wrong with using an index. They can have great explanatory power. However, it's important to be cautious of indices that combine disparate measures. For example, the United Nations [Gender Inequality Index](p.org/en/content/gender-inequality-index-gii) combines several measures related to women's progress toward equality.
+Analysts who want to follow the trend of an issue often create indices of various values to track progress. There is nothing intrinsically wrong with using an index. They can have great explanatory power. However, it's important to be cautious of indices that combine disparate measures.
 
-One of the measures used in the GII is "representation of women in parliament". Two countries in the world have law's mandating gender representation in their parliaments: China and Pakistan. As a result these two countries perform far better in the index than countries that are similar in all other ways. Is this right? Maybe so, but it certainly isn't obvious. The GII and similar indices should always be used with careful analysis to ensure their underlying variables don't swing the index in unexpected ways.
+For example, the United Nations [Gender Inequality Index](p.org/en/content/gender-inequality-index-gii) combines several measures related to women's progress toward equality. One of the measures used in the GII is "representation of women in parliament". Two countries in the world have law's mandating gender representation in their parliaments: China and Pakistan. As a result these two countries perform far better in the index than countries that are similar in all other ways. Is this fair? It doesn't really matter, because it is confusing to anyone who doesn't know about this factor. The GII and similar indices should always be used with careful analysis to ensure their underlying variables don't swing the index in unexpected ways.
 
 ### Results have been p-hacked
 
