@@ -2,7 +2,7 @@
 
 **An exhaustive reference to the problems seen in real-world data along with suggestions on how to resolve them.**
 
-As a reporter your world is full of data. And that data is full of problems. This guide presents a thorough description of many of the kinds of problems that crop up over and over again in the many kinds of data journalists work with.
+As a reporter your world is full of data. And that data is full of problems. This guide presents a thorough description of many of the kinds of problems that crop up over and over again in the data journalists work with.
 
 Most of these problems can be solved. Some problems can't be solved and that means you shouldn't use the data. Other problems can't be solved, but you should still use the data with care. In order to allow for these ambiguities, this guide is organized by who you should take the problem to *first*: your source, a programmer, an expert, etc. In the details of the problem you may also find suggestions for what to do if the first suggestion can't help you.
 
@@ -105,9 +105,9 @@ Neither `weight` nor `cost` conveys any information about the unit of measuremen
 
 ### Categories are badly chosen
 
-Categorization is a science and it is often applied badly. The most common case of this is data which purports to be `true` or `false`, but really isn't. This often happens with surveys where `refused` or `no answer` are also valid—and meaningful!—values. Another common problem is the usage of any kind of "other" category. If the categories in a dataset of world people's are a bunch of countries and an "other" be sure you know what that means. Did the data collector not know? Were they in international waters? Ex-patriots? Refugees?
+The most common case of this is data which purports to be `true` or `false`, but really isn't. This often happens with surveys where `refused` or `no answer` are also valid—and meaningful—values. Another common problem is the usage of any kind of `other` category. If the categories in a dataset are a bunch of countries and an `other`, what does that mean? Does it mean that the person collecting the data didn't know the right answer? Were they in international waters? Ex-patriots? Refugees?
 
-Bad categories can also artificially exclude data. This frequently happens with crime statistics. The FBI has defined the crime of "rape" in a variety of different ways over time. In fact, they've done such a poor job of figuring out what rape is that many criminologists argue the statistics should not be used at all. A bad definition might mean a crime is counted in a different category than you expect or that it wasn't counted at all! Be exceptionally leery of this problem when working with data topics where definitions tend to be arbitrary, such as `race` or `ethnicity`.
+Bad categories can also artificially exclude data. This frequently happens with crime statistics. The FBI has defined the crime of "rape" in a variety of different ways over time. In fact, they've done such a poor job of figuring out what rape is that many criminologists argue their statistics should not be used at all. A bad definition might mean a crime is counted in a different category than you expect or that it wasn't counted at all. Be exceptionally ware of this problem when working with topics where definitions tend to be arbitrary, such as `race` or `ethnicity`.
 
 ### Field names are ambiguous
 
@@ -171,7 +171,9 @@ In the vast majority of cases your text editor or spreadsheet application will f
 
 A tremendous amount of data—especially government data—is only available in PDF format. If you have real, textual data inside the PDF then there are several good options for extracting it. (If you've got [scanned documents](#data-is-in-scanned-documents) that's a different problem.) One excellent, free tool is [Tabula](#http://tabula.technology/). However, if you have Adobe Creative Cloud then also have access to Acrobat Pro, which has an excellent feature for exporting tables in PDFs to Excel. Either solution should be able to extract most tabular data from a PDF.
 
-See also: [Data is in scanned documents](#data-is-in-scanned-documents)
+See also:
+
+* [Data is in scanned documents](#data-is-in-scanned-documents)
 
 ### Data is too granular
 
@@ -179,7 +181,9 @@ This is the opposite of [Data is too coarse](#data-is-too-coarse). In this case 
 
 Data can be aggregated by using the Pivot Table feature of Excel or Google Docs, by using a SQL database or by writing custom code. Pivot Tables are a fabulous tool that every reporter should learn, but they do have their limits. For exceptionally large datasets or aggregations to unusual groups you should ask a programmer and they can craft a solution that's easier to verify and reuse.
 
-See also: [Data is aggregated to the wrong categories or geographies](#data-is-aggregated-to-the-wrong-categories-or-geographies).
+See also:
+
+* [Data is aggregated to the wrong categories or geographies](#data-is-aggregated-to-the-wrong-categories-or-geographies).
 
 ### Data was entered by humans
 
@@ -227,7 +231,9 @@ A source can accidentally or intentionally misrepresent the world by giving you 
 
 If you have data that covers a limited timeframe try to avoid starting your calculations with the very first time period you have data for. If you start a few years (or months or days) into the data you can have confidence that you aren't making a comparison which would be invalidated by having a single additional data point.
 
-See also: [Frame of reference has been manipulated](#frame-of-reference-has-been-manipulated)
+See also:
+
+* [Frame of reference has been manipulated](#frame-of-reference-has-been-manipulated)
 
 ### Frame of reference has been manipulated
 
@@ -237,7 +243,9 @@ This also happens when comparing places. If I want to make one country look bad,
 
 This problem tends to crop up in subjects where people have a strong confirmation bias. ("Just as I thought, crime is up!") Whenever possible try comparing rates from several different starting points to see how the numbers shift. And whatever you do, *don't use this technique yourself* to make a point you think is important. That's inexcusable.
 
-See also: [Timeframe has been manipulated](#timeframe-has-been-manipulated)  
+See also:
+
+* [Timeframe has been manipulated](#timeframe-has-been-manipulated)  
 
 ## Issues you should take to a programmer first
 
@@ -245,7 +253,11 @@ See also: [Timeframe has been manipulated](#timeframe-has-been-manipulated)
 
 Sometimes your data is at about the right level of detail (neither [too coarse](#data-is-too-coarse) nor [too granular](#data-is-too-granular)), but it has been aggregated to different grouping than you want. This classic example of this is data that is aggregated by zip codes that you would prefer to have by city neighborhoods. In many cases this is an impossible problem to solve without getting more granular data from your source, but in some subset of cases the data can be proportionally mapped from one group to another. This must be undertaken only with careful understanding of the [margin-of-error](#margin-of-error-is-too-large) that may be introduced in the process. If you've got data aggregated to the wrong groups, ask a programmer if it is possible to reaggregate it.
 
-See also: [Data is too coarse](#data-is-too-coarse), [Data is too granular](#data-is-too-granular), [Margin-of-error is too large](#margin-of-error-is-too-large)
+See also:
+
+* [Data is too coarse](#data-is-too-coarse)
+* [Data is too granular](#data-is-too-granular)
+* [Margin-of-error is too large](#margin-of-error-is-too-large)
 
 ### Data is in scanned documents
 
@@ -255,7 +267,9 @@ It is possible to extract text from images and turn it back into data. This is d
 
 There are many websites you can upload a document to for OCR, but there are also free tools that a programmer may have able to tune for your specific documents. Ask them what the best strategy is for the particular documents you have.
 
-See also: [Data is in a PDF](#data-is-in-a-pdf)
+See also:
+
+* [Data is in a PDF](#data-is-in-a-pdf)
 
 ## Issues you should raise with third-party expert first
 
@@ -271,7 +285,11 @@ It's rare that you'll know exactly how a dataset was gathered, but indications o
 
 If the way the data was gathered seems questionable and your source can't offer your [ironcald provenance](#provenance-is-not-documented) ] then you should always check with another expert that the data could reasonably have been collected in the way it was described.
 
-See also: [Data asserts unrealistic precision](#data-asserts-unrealistic-precision), [It's too good to be true](#its-too-good-to-be-true), [Provenance is not documented](#provenance-is-not-documented)  
+See also:
+
+* [Data asserts unrealistic precision](#data-asserts-unrealistic-precision)
+* [It's too good to be true](#its-too-good-to-be-true)
+* [Provenance is not documented](#provenance-is-not-documented)  
 
 ### Data asserts unrealistic precision
 
