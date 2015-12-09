@@ -119,7 +119,7 @@ If the first one was written by a European and the second one by an American the
 
 ### Units are not specified
 
-Neither `weight` nor `cost` conveys any information about the unit of measurement. Don't be too quick to assume that data produced by in the United States is in pounds and dollars. Scientific data will often be in metric. Foreign prices may be in their local currency. If data doesn't spell out it's units, go back to your source and find out. Even if it does spell out it's units always be wary of meanings that may have shifted over time. A dollar in 2010 is not a dollar today. And a [ton](https://en.wikipedia.org/wiki/Short_ton) is not a [ton](https://en.wikipedia.org/wiki/Long_ton) nor a [tonne](https://en.wikipedia.org/wiki/Tonne).
+Neither `weight` nor `cost` conveys any information about the unit of measurement. Don't be too quick to assume that data produced by in the United States is in pounds and dollars. Scientific data will often be in metric. Foreign prices may be in their local currency. If data doesn't spell out its units, go back to your source and find out. Even if it does spell out its units always be wary of meanings that may have shifted over time. A dollar in 2010 is not a dollar today. And a [ton](https://en.wikipedia.org/wiki/Short_ton) is not a [ton](https://en.wikipedia.org/wiki/Long_ton) nor a [tonne](https://en.wikipedia.org/wiki/Tonne).
 
 See also:
 
@@ -128,7 +128,7 @@ See also:
 
 ### Categories are badly chosen
 
-Watch out for data which purports to be only `true` or `false`, but really isn't. This is often the case with surveys where `refused` or `no answer` are also valid—and meaningful—values. Another common problem is the usage of any kind of `other` category. If the categories in a dataset are a bunch of countries and an `other`, what does that mean? Does it mean that the person collecting the data didn't know the right answer? Were they in international waters? Ex-patriots? Refugees?
+Watch out for data which purports to be only `true` or `false`, but really isn't. This is often the case with surveys where `refused` or `no answer` are also valid—and meaningful—values. Another common problem is the usage of any kind of `other` category. If the categories in a dataset are a bunch of countries and an `other`, what does that mean? Does it mean that the person collecting the data didn't know the right answer? Were they in international waters? Expatriates? Refugees?
 
 Bad categories can also artificially exclude data. This frequently happens with crime statistics. The FBI has defined the crime of "rape" in a variety of different ways over time. In fact, they've done such a poor job of figuring out what rape is that many criminologists argue their statistics should not be used at all. A bad definition might mean a crime is counted in a different category than you expect or that it wasn't counted at all. Be exceptionally ware of this problem when working with topics where definitions tend to be arbitrary, such as `race` or `ethnicity`.
 
@@ -140,7 +140,7 @@ What is a `residence`? Is it where someone lives or where they pay taxes? Is it 
 
 Data can are made by a variety of kinds of individuals and organizations including businesses, governments, nonprofits and nut-job conspiracy theorists. That data can be gathered in many different ways including surveys, sensors and satellites. It may be typed, tapped or scribbled. Knowing where your data came from can give you a huge amount of insight into its limitations.
 
-Survey data, for example, is rarely exhaustive. Sensors vary in their accuracy. Governments are often disinclined to give you unbiased information. Data from a war zone may have a strong geographical bias due to the dangers of crossing battle lines. To make this situation worse, these different sources are often daisy-chained together. Academics sometimes re-distribute data they got from the government. Data that is written by a doctor may be rekeyed by a nurse. Every stage in that chain is an opportunity for error. Know where your data came from.
+Survey data, for example, is rarely exhaustive. Sensors vary in their accuracy. Governments are often disinclined to give you unbiased information. Data from a war zone may have a strong geographical bias due to the dangers of crossing battle lines. To make this situation worse, these different sources are often daisy-chained together. Academics sometimes redistribute data they got from the government. Data that is written by a doctor may be rekeyed by a nurse. Every stage in that chain is an opportunity for error. Know where your data came from.
 
 See also:
 
@@ -223,7 +223,7 @@ See also:
 
 ### Data was entered by humans
 
-Human data entry is such a common problem that symptoms of it are mentioned in at least 10 of the other issues described here. There is no worse way to screw up data than to let a single human type it in. For example, I once acquired the complete dog licensing database for Cook County, Illinois. Instead of requiring the person registering their dog to choose a breed from a list, the creators of the system had simply given them a text field to type into. As a result this database contained at least 250 spellings of `Chihuahua`. Even with the best tools available, data this messy can't be saved. It is effectively meaningless. It's not that important with dog data, but you don't want it happening with wounded soldiers or stock tickers. Beware human entered data.
+Human data entry is such a common problem that symptoms of it are mentioned in at least 10 of the other issues described here. There is no worse way to screw up data than to let a single human type it in. For example, I once acquired the complete dog licensing database for Cook County, Illinois. Instead of requiring the person registering their dog to choose a breed from a list, the creators of the system had simply given them a text field to type into. As a result this database contained at least 250 spellings of `Chihuahua`. Even with the best tools available, data this messy can't be saved. It is effectively meaningless. It's not that important with dog data, but you don't want it happening with wounded soldiers or stock tickers. Beware human-entered data.
 
 ### Aggregations computed on missing values
 
@@ -246,7 +246,7 @@ See also:
 
 ### Margin-of-error is too large
 
-I know of no other single issue that causes more reporting errors than the unreflective usage of numbers with very large margins-of-error. MOE is usually associated with survey data. The most likely place a reporter encounters it is when using polling data or the US Census Bureau's [American Community Survey](https://www.census.gov/programs-surveys/acs/) data. The MOE is a measure of the range of possible true values. It may be expressed as a number (`400 +/- 80`) or as a percentage of the whole (`400 +/- 20%`). The smaller the relevant population, the larger the MOE will be. For example, according to the 2014 5-year ACS estimates, the number of Asians living in New York is `1,106,989 +/- 3,526` (0.3%). The number of Filipinos is `71,969 +/- 3,088` (4.3%). The number of Samoan's is `203 +/- 144`. (71%)
+I know of no other single issue that causes more reporting errors than the unreflective usage of numbers with very large margins-of-error. MOE is usually associated with survey data. The most likely place a reporter encounters it is when using polling data or the US Census Bureau's [American Community Survey](https://www.census.gov/programs-surveys/acs/) data. The MOE is a measure of the range of possible true values. It may be expressed as a number (`400 +/- 80`) or as a percentage of the whole (`400 +/- 20%`). The smaller the relevant population, the larger the MOE will be. For example, according to the 2014 5-year ACS estimates, the number of Asians living in New York is `1,106,989 +/- 3,526` (0.3%). The number of Filipinos is `71,969 +/- 3,088` (4.3%). The number of Samoans is `203 +/- 144`. (71%)
 
 The first two numbers are safe to report. The third number should never be used in published reporting. There is no one rule about when a number is not accurate enough to use, but as a rule of thumb, you should be cautious about using any number with a MOE over 10%.
 
@@ -353,7 +353,7 @@ As a side-benefit of doing this work, outliers are often a great way to find sto
 
 Analysts who want to follow the trend of an issue often create indices of various values to track progress. There is nothing intrinsically wrong with using an index. They can have great explanatory power. However, it's important to be cautious of indices that combine disparate measures.
 
-For example, the United Nations [Gender Inequality Index](p.org/en/content/gender-inequality-index-gii) combines several measures related to women's progress toward equality. One of the measures used in the GII is "representation of women in parliament". Two countries in the world have law's mandating gender representation in their parliaments: China and Pakistan. As a result these two countries perform far better in the index than countries that are similar in all other ways. Is this fair? It doesn't really matter, because it is confusing to anyone who doesn't know about this factor. The GII and similar indices should always be used with careful analysis to ensure their underlying variables don't swing the index in unexpected ways.
+For example, the United Nations [Gender Inequality Index](p.org/en/content/gender-inequality-index-gii) combines several measures related to women's progress toward equality. One of the measures used in the GII is "representation of women in parliament". Two countries in the world have laws mandating gender representation in their parliaments: China and Pakistan. As a result these two countries perform far better in the index than countries that are similar in all other ways. Is this fair? It doesn't really matter, because it is confusing to anyone who doesn't know about this factor. The GII and similar indices should always be used with careful analysis to ensure their underlying variables don't swing the index in unexpected ways.
 
 ### Results have been p-hacked
 
