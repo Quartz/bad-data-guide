@@ -1,10 +1,10 @@
-# The Quartz Guide to Bad Data
+# The Quartz guide to bad data
 
-**An exhaustive reference to the problems seen in real-world data along with suggestions on how to resolve them.**
+**An exhaustive reference to problems seen in real-world data along with suggestions on how to resolve them.**
 
-As a reporter your world is full of data. And that data is full of problems. This guide presents thorough descriptions and possible solutions to many of the kinds of problems that you will encounter when working with data.
+As a reporter your world is full of data. And that data are full of problems. This guide presents thorough descriptions and possible solutions to many of the kinds of problems that you will encounter when working with data.
 
-Most of these problems can be solved. Some of them can't be solved and that means you should not use the data. Others can't be solved, but you should continue using the data with precuations. In order to allow for these ambiguities, this guide is organized by who is best equipped to solve the problem: you, your source, an expert, etc. In the description of each problem you may also find suggestions for what to do if that person can't help you.
+Most of these problems can be solved. Some of them can't be solved and that means you should not use the data. Others can't be solved, but you should continue using the data with precautions. In order to allow for these ambiguities, this guide is organized by who is best equipped to solve the problem: you, your source, an expert, etc. In the description of each problem you may also find suggestions for what to do if that person can't help you.
 
 You can not possibly review every dataset you encounter with for all of these problems. If you try to do that you will never get anything published. However, by familiarizing yourself with the kinds of issues you are likely to encounter you will have a better chance of identifying an issue before it causes you to make a mistake.
 
@@ -12,11 +12,11 @@ If you have questions about this guide please email [Chris](mailto:c@qz.com). Go
 
 # Index
 
-## Issues that are your source should solve
+## Issues that your source should solve
 
 * [Values are missing](#values-are-missing)      
 * [Zeros replace missing values](#zeros-replace-missing-values)      
-* [Data is missing you know should be there](#data-is-missing-you-know-should-be-there)      
+* [Data are missing you know should be there](#data-are-missing-you-know-should-be-there)      
 * [Rows or values are duplicated](#rows-or-values-are-duplicated)      
 * [Spelling is inconsistent](#spelling-is-inconsistent)      
 * [Name order is inconsistent](#name-order-is-inconsistent)      
@@ -26,7 +26,7 @@ If you have questions about this guide please email [Chris](mailto:c@qz.com). Go
 * [Field names are ambiguous](#field-names-are-ambiguous)      
 * [Provenance is not documented](#provenance-is-not-documented)   
 * [Suspicious numbers are present](#suspicious-numbers-are-present)      
-* [Data is too coarse](#data-is-too-coarse)          
+* [Data are too coarse](#data-are-too-coarse)          
 * [Totals differ from published aggregates](#totals-differ-from-published-aggregates)
 * [Spreadsheet has 65536 rows](#spreadsheet-has-65536-rows)      
 * [Spreadsheet has dates in 1900 or 1904](#spreadsheet-has-dates-in-1900-or-1904)      
@@ -35,8 +35,8 @@ If you have questions about this guide please email [Chris](mailto:c@qz.com). Go
 ## Issues that you should solve
 
 * [Text is garbled](#text-is-garbled)
-* [Data is in a PDF](#data-is-in-a-pdf)        
-* [Data is too granular](#data-is-too-granular)        
+* [Data are in a PDF](#data-are-in-a-pdf)        
+* [Data are too granular](#data-are-too-granular)        
 * [Data was entered by humans](#data-was-entered-by-humans)          
 * [Aggregations were computed on missing values](#aggregations-were-computed-on-missing-values)      
 * [Sample is not random](#sample-is-not-random)      
@@ -62,8 +62,8 @@ If you have questions about this guide please email [Chris](mailto:c@qz.com). Go
 
 ## Issues a programmer should help you solve
 
-* [Data is aggregated to the wrong categories or geographies](#data-is-aggregated-to-the-wrong-categories-or-geographies)        
-* [Data is in scanned documents](#data-is-in-scanned-documents)
+* [Data are aggregated to the wrong categories or geographies](#data-are-aggregated-to-the-wrong-categories-or-geographies)        
+* [Data are in scanned documents](#data-are-in-scanned-documents)
 
 # Detailed list of all problems
 
@@ -71,7 +71,7 @@ If you have questions about this guide please email [Chris](mailto:c@qz.com). Go
 
 ### Values are missing
 
-Beware blank or "null" values in any dataset unless you are certain you know what they mean. If the data is annual, was the value for that year never collected? If it is a survey, did a respondent refuse to answer the question?
+Beware blank or "null" values in any dataset unless you are certain you know what they mean. If the data are annual, was the value for that year never collected? If it is a survey, did a respondent refuse to answer the question?
 
 Anytime you're working with data that has missing values you should ask yourself: "Do I know what the absence of this data means?" If the answer is no, you should ask your source.
 
@@ -83,9 +83,9 @@ See also:
 
 * [Suspicious numbers are present](#suspicious-numbers-are-present)    
 
-### Data is missing you know should be there
+### Data are missing you know should be there
 
-Sometimes data is missing and you can't tell from the dataset itself, but you can still know because you know what the data purports to be about. If you have a dataset covering the United States then you can check to ensure all 50 states represented. (And don't forget about [the territories](https://en.wikipedia.org/wiki/Territories_of_the_United_States)—50 isn't the right number if the dataset includes Puerto Rico.) If you're dealing with a dataset of baseball players make sure it has the number of teams you expect. Verify that a few players who you know are included. Trust your intuition if something seems to missing and double-check with your source. The universe of your data might be smaller than you think.
+Sometimes data are missing and you can't tell from the dataset itself, but you can still know because you know what the data purports to be about. If you have a dataset covering the United States then you can check to ensure all 50 states represented. (And don't forget about [the territories](https://en.wikipedia.org/wiki/Territories_of_the_United_States)—50 isn't the right number if the dataset includes Puerto Rico.) If you're dealing with a dataset of baseball players make sure it has the number of teams you expect. Verify that a few players who you know are included. Trust your intuition if something seems to missing and double-check with your source. The universe of your data might be smaller than you think.
 
 ### Rows or values are duplicated
 
@@ -134,7 +134,7 @@ Bad categories can also artificially exclude data. This frequently happens with 
 
 ### Field names are ambiguous
 
-What is a `residence`? Is it where someone lives or where they pay taxes? Is it it a city or a county? Field names in data are never as specific as we would like, but particular concern should be applied to those that could obviously mean two or more things. Even if you correctly infer what the data is supposed to be, that ambiguity could have easily caused the person collecting the data to enter the wrong value.
+What is a `residence`? Is it where someone lives or where they pay taxes? Is it it a city or a county? Field names in data are never as specific as we would like, but particular concern should be applied to those that could obviously mean two or more things. Even if you correctly infer what the values are supposed to mean, that ambiguity could have easily caused the person collecting the data to enter the wrong value.
 
 ### Provenance is not documented
 
@@ -163,7 +163,7 @@ See also:
 * [Spreadsheet has 65536 rows](#spreadsheet-has-65536-rows)      
 * [Spreadsheet has dates in 1900 or 1904](#spreadsheet-has-dates-in-1900-or-1904)  
 
-### Data is too coarse
+### Data are too coarse
 
 You've got states and you need counties. You've got employers and you need employees. They gave you years, but you want months. In many cases we get data that has been aggregated too much for our purposes.
 
@@ -173,8 +173,8 @@ One thing you should never ever do is divide the yearly data you have by 12 and 
 
 See also:
 
-* [Data is too granular](#data-is-too-granular)
-* [Data is aggregated to the wrong categories or geographies](#data-is-aggregated-to-the-wrong-categories-or-geographies)
+* [Data are too granular](#data-are-too-granular)
+* [Data are aggregated to the wrong categories or geographies](#data-are-aggregated-to-the-wrong-categories-or-geographies)
 
 ### Totals differ from published aggregates
 
@@ -200,26 +200,26 @@ Not all numerals are numbers. For instance, the US Census Bureau uses "FIPS code
 
 All letters are represented by computers as numbers. Encoding problems are issues that arise when text is represented by a specific set of numbers (called an "encoding") and you don't know what it is. This leads to a phenomenon called [mojibake](https://en.wikipedia.org/wiki/Mojibake) where the text in your data looks like garbage, or like this: ���.
 
-In the vast majority of cases your text editor or spreadsheet application will figure out the correct encoding, however, if it screws it up you could publishing somebody's name with a weird character in the middle. Your source should be able to tell you what encoding your data is in. In the event they can't there are ways of guessing that are about fairly reliable. Ask a programmer.
+In the vast majority of cases your text editor or spreadsheet application will figure out the correct encoding, however, if it screws it up you could publishing somebody's name with a weird character in the middle. Your source should be able to tell you what encoding your data are in. In the event they can't there are ways of guessing that are about fairly reliable. Ask a programmer.
 
-### Data is in a PDF
+### Data are in a PDF
 
-A tremendous amount of data—especially government data—is only available in PDF format. If you have real, textual data inside the PDF then there are several good options for extracting it. (If you've got [scanned documents](#data-is-in-scanned-documents) that's a different problem.) One excellent, free tool is [Tabula](#http://tabula.technology/). However, if you have Adobe Creative Cloud then also have access to Acrobat Pro, which has an excellent feature for exporting tables in PDFs to Excel. Either solution should be able to extract most tabular data from a PDF.
+A tremendous amount of data—especially government data—is only available in PDF format. If you have real, textual data inside the PDF then there are several good options for extracting it. (If you've got [scanned documents](#data-are-in-scanned-documents) that's a different problem.) One excellent, free tool is [Tabula](#http://tabula.technology/). However, if you have Adobe Creative Cloud then also have access to Acrobat Pro, which has an excellent feature for exporting tables in PDFs to Excel. Either solution should be able to extract most tabular data from a PDF.
 
 See also:
 
-* [Data is in scanned documents](#data-is-in-scanned-documents)
+* [Data are in scanned documents](#data-are-in-scanned-documents)
 
-### Data is too granular
+### Data are too granular
 
-This is the opposite of [Data is too coarse](#data-is-too-coarse). In this case you've got counties, but you want states or you've got months but you want years. Fortunately this is usually pretty straightforward.
+This is the opposite of [Data are too coarse](#data-are-too-coarse). In this case you've got counties, but you want states or you've got months but you want years. Fortunately this is usually pretty straightforward.
 
 Data can be aggregated by using the Pivot Table feature of Excel or Google Docs, by using a SQL database or by writing custom code. Pivot Tables are a fabulous tool that every reporter should learn, but they do have their limits. For exceptionally large datasets or aggregations to unusual groups you should ask a programmer and they can craft a solution that's easier to verify and reuse.
 
 See also:
 
-* [Data is too coarse](#data-is-too-coarse)
-* [Data is aggregated to the wrong categories or geographies](#data-is-aggregated-to-the-wrong-categories-or-geographies).
+* [Data are too coarse](#data-are-too-coarse)
+* [Data are aggregated to the wrong categories or geographies](#data-are-aggregated-to-the-wrong-categories-or-geographies).
 
 ### Data was entered by humans
 
@@ -272,7 +272,7 @@ See also:
 
 ### Data has been manually edited
 
-Manual editing is almost the same as [data that was entered by humans](#data-was-entered-by-humans) except that it happens after the fact and often with good intentions. In fact, data is often manually edited in an attempt to fix data that was originally entered by humans. Problems start to creep in when the person doing the editing doesn't have complete knowledge of the original data. I once saw someone spontaneously "correct" a name in a dataset from `Smit` to `Smith`. Was that person's name really `Smith`? I don't know, but I do know that data is now a problem. Without a record of that change, it's impossible to verify what it should be.
+Manual editing is almost the same as [data that was entered by humans](#data-was-entered-by-humans) except that it happens after the fact and often with good intentions. In fact, data are often manually edited in an attempt to fix data that was originally entered by humans. Problems start to creep in when the person doing the editing doesn't have complete knowledge of the original data. I once saw someone spontaneously "correct" a name in a dataset from `Smit` to `Smith`. Was that person's name really `Smith`? I don't know, but I do know that value is now a problem. Without a record of that change, it's impossible to verify what it should be.
 
 Issues with manual editing are one reason why you always want to ensure your data has [well-documented provenance](#provenance-is-not-documented). A lack of provenance can be a good indication that someone may have monkeyed with it. Academics often get data from the government, monkey with it and then redistribute it to journalists. Without any record of their changes it's impossible to know if the changes they made were justified. Whenever feasible always try to get the *primary source* or at least the earliest version you can and then do your own analysis from that.
 
@@ -377,17 +377,17 @@ Beware any data that purports to represent something that you could not possibly
 
 ## Issues a programmer should help you solve
 
-### Data is aggregated to the wrong categories or geographies
+### Data are aggregated to the wrong categories or geographies
 
-Sometimes your data is at about the right level of detail (neither [too coarse](#data-is-too-coarse) nor [too granular](#data-is-too-granular)), but it has been aggregated to different grouping than you want. This classic example of this is data that is aggregated by zip codes that you would prefer to have by city neighborhoods. In many cases this is an impossible problem to solve without getting more granular data from your source, but somtimes the data can be proportionally mapped from one group to another. This must be undertaken only with careful understanding of the [margin-of-error](#margin-of-error-is-too-large) that may be introduced in the process. If you've got data aggregated to the wrong groups, ask a programmer if it is possible to re-aggregate it.
+Sometimes your data are at about the right level of detail (neither [too coarse](#data-are-too-coarse) nor [too granular](#data-are-too-granular)), but it has been aggregated to different grouping than you want. This classic example of this is data that is aggregated by zip codes that you would prefer to have by city neighborhoods. In many cases this is an impossible problem to solve without getting more granular data from your source, but somtimes the data can be proportionally mapped from one group to another. This must be undertaken only with careful understanding of the [margin-of-error](#margin-of-error-is-too-large) that may be introduced in the process. If you've got data aggregated to the wrong groups, ask a programmer if it is possible to re-aggregate it.
 
 See also:
 
-* [Data is too coarse](#data-is-too-coarse)
-* [Data is too granular](#data-is-too-granular)
+* [Data are too coarse](#data-are-too-coarse)
+* [Data are too granular](#data-are-too-granular)
 * [Margin-of-error is too large](#margin-of-error-is-too-large)
 
-### Data is in scanned documents
+### Data are in scanned documents
 
 Thanks to FOIA laws it is frequently the case that governments are required to give you data—even though they really don't want to. A very common tactic in these cases is for them to give you scans or photographs of the pages. These may be actual image files or, more likely, they will be gathered up into a PDF.
 
@@ -397,4 +397,4 @@ There are many websites you can upload a document to for OCR, but there are also
 
 See also:
 
-* [Data is in a PDF](#data-is-in-a-pdf)
+* [Data are in a PDF](#data-are-in-a-pdf)
