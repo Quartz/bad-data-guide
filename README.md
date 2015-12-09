@@ -202,6 +202,9 @@ All letters are represented by computers as numbers. Encoding problems are issue
 
 In the vast majority of cases your text editor or spreadsheet application will figure out the correct encoding, however, if it screws it up you could publishing somebody's name with a weird character in the middle. Your source should be able to tell you what encoding your data are in. In the event they can't there are ways of guessing that are about fairly reliable. Ask a programmer.
 
+### bad CSV line endings from Excel on OSX 
+On a Mac, Excel produces csv files with the wrong line endings, which causes problems for git (amongst other things). [source](https://nicercode.github.io/blog/2013-04-30-excel-and-line-endings/). Fix as noted in link or by opening the file with a different tool and re-saving.
+
 ### Data are in a PDF
 
 A tremendous amount of data—especially government data—is only available in PDF format. If you have real, textual data inside the PDF then there are several good options for extracting it. (If you've got [scanned documents](#data-are-in-scanned-documents) that's a different problem.) One excellent, free tool is [Tabula](#http://tabula.technology/). However, if you have Adobe Creative Cloud then also have access to Acrobat Pro, which has an excellent feature for exporting tables in PDFs to Excel. Either solution should be able to extract most tabular data from a PDF.
