@@ -35,6 +35,7 @@ If you have questions about this guide please email [Chris](mailto:c@qz.com). Go
 ## Issues that you should solve
 
 * [Text is garbled](#text-is-garbled)
+* [Line endings are garbled](#line-endings-are-garbled)
 * [Data are in a PDF](#data-are-in-a-pdf)        
 * [Data are too granular](#data-are-too-granular)        
 * [Data was entered by humans](#data-was-entered-by-humans)          
@@ -202,8 +203,8 @@ All letters are represented by computers as numbers. Encoding problems are issue
 
 In the vast majority of cases your text editor or spreadsheet application will figure out the correct encoding, however, if it screws it up you could publishing somebody's name with a weird character in the middle. Your source should be able to tell you what encoding your data are in. In the event they can't there are ways of guessing that are about fairly reliable. Ask a programmer.
 
-### bad CSV line endings from Excel on OSX 
-On a Mac, Excel produces csv files with the wrong line endings, which causes problems for git (amongst other things). [source](https://nicercode.github.io/blog/2013-04-30-excel-and-line-endings/). Fix as noted in link or by opening the file with a different tool and re-saving.
+### Line endings are garbled
+On a Mac, Excel produces csv files with the wrong line endings, which causes problems for git (amongst other things). [source](https://nicercode.github.io/blog/2013-04-30-excel-and-line-endings/). Quickly fix isolated cases opening the file with a different tool and re-saving. For issues with many files, see link.
 
 ### Data are in a PDF
 
