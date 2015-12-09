@@ -43,7 +43,7 @@ If you have questions about this guide please email [Chris](mailto:c@qz.com). Go
 * [Margin-of-error is too large](#margin-of-error-is-too-large)      
 * [Margin-of-error is unknown](#margin-of-error-is-unknown)
 * [Sample is biased](#sample-is-biased)      
-* [Data has been manually edited](#data-has-been-manualy-edited)      
+* [Data has been manually edited](#data-has-been-manually-edited)      
 * [Inflation skews the data](#inflation-skews-the-data)      
 * [Natural/seasonal variation skews the data](#naturalseasonal-variation-skews-the-data)
 * [Timeframe has been manipulated](#timeframe-has-been-manipulated)      
