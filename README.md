@@ -29,7 +29,7 @@ If you have questions about this guide please email [Chris](mailto:c@qz.com). Go
 * [Data are too coarse](#data-are-too-coarse)          
 * [Totals differ from published aggregates](#totals-differ-from-published-aggregates)
 * [Spreadsheet has 65536 rows](#spreadsheet-has-65536-rows)      
-* [Spreadsheet has dates in 1900 or 1904](#spreadsheet-has-dates-in-1900-or-1904)      
+* [Spreadsheet has dates in 1900, 1904, 1969, or 1970](#spreadsheet-has-dates-in-1900-1904-1969-or-1970)      
 * [Text has been converted to numbers](#text-has-been-converted-to-numbers)
 
 ## Issues that you should solve
@@ -81,7 +81,8 @@ Worse than missing values is when an arbitrary value is used instead. This can b
 
 See also:
 
-* [Suspicious numbers are present](#suspicious-numbers-are-present)    
+* [Suspicious numbers are present](#suspicious-numbers-are-present) 
+* [Spreadsheet has dates in 1900, 1904, 1969, or 1970](#spreadsheet-has-dates-in-1900-1904-1969-or-1970)   
 
 ### Data are missing you know should be there
 
@@ -162,6 +163,8 @@ Dates:
 
 * [`1970-01-01T00:00:00Z`](https://en.wikipedia.org/wiki/Unix_time#Encoding_time_as_a_number)
 * [`1969-12-31T24:59:59Z`](https://en.wikipedia.org/wiki/Unix_time#Encoding_time_as_a_number)
+* [`January 1st, 1900`](#spreadsheet-has-dates-in-1900-1904-1969-or-1970)
+* [`January 1st, 1904`](#spreadsheet-has-dates-in-1900-1904-1969-or-1970)
 
 Locations:
 
@@ -199,9 +202,11 @@ These sorts of discrepancies between published statistics and raw data can be a 
 
 The maximum number of rows an old-fashioned Excel spreadsheet was allowed to have was 65,536. If you receive a dataset with that number of rows you have almost certainly been given truncated data. Go back and ask for the rest. Newer versions of Excel allowed for 1,048,576 rows, so it's less likely you'll be working with data that hits the limit.
 
-### Spreadsheet has dates in 1900 or 1904
+### Spreadsheet has dates in 1900, 1904, 1969, or 1970
 
 For reasons beyond obscure, Excel's default date from which it counts all other dates is `January 1st, 1900`, *unless* you're using Excel on a Mac, in which case it's `January 1st, 1904`. There are a variety of ways in which data in Excel can be entered or calculated incorrectly and end up as one of these two dates. If you spot them in your data, it's probably an issue.
+
+Many databases and applications will often generate a date of `1970-01-01T00:00:00Z` or `1969-12-31T24:59:59Z` which is the [Unix epoch for timestamps](https://en.wikipedia.org/wiki/Unix_time#Encoding_time_as_a_number). In other words this is what happens when a system tries to display and empty value or a `0` value as a date. 
 
 ### Text has been converted to numbers
 
