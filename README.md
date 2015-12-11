@@ -206,7 +206,7 @@ The maximum number of rows an old-fashioned Excel spreadsheet was allowed to hav
 
 For reasons beyond obscure, Excel's default date from which it counts all other dates is `January 1st, 1900`, *unless* you're using Excel on a Mac, in which case it's `January 1st, 1904`. There are a variety of ways in which data in Excel can be entered or calculated incorrectly and end up as one of these two dates. If you spot them in your data, it's probably an issue.
 
-Many databases and applications will often generate a date of `1970-01-01T00:00:00Z` or `1969-12-31T24:59:59Z` which is the [Unix epoch for timestamps](https://en.wikipedia.org/wiki/Unix_time#Encoding_time_as_a_number). In other words this is what happens when a system tries to display and empty value or a `0` value as a date. 
+Many databases and applications will often generate a date of `1970-01-01T00:00:00Z` or `1969-12-31T24:59:59Z` which is the [Unix epoch for timestamps](https://en.wikipedia.org/wiki/Unix_time#Encoding_time_as_a_number). In other words this is what happens when a system tries to display an empty value or a `0` value as a date. 
 
 ### Text has been converted to numbers
 
