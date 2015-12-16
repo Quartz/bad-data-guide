@@ -10,6 +10,8 @@ You can not possibly review every dataset you encounter with for all of these pr
 
 If you have questions about this guide please email [Chris](mailto:c@qz.com). Good luck!
 
+This work is licensed under a [Creative Commons Attribution-NonCommercial 4.0 International License](http://creativecommons.org/licenses/by-nc/4.0/). Send your pull requests!
+
 # Index
 
 ## Issues that your source should solve
