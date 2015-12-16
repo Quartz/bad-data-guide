@@ -51,7 +51,7 @@ If you have questions about this guide please email [Chris](mailto:c@qz.com). Go
 
 ## Issues a third-party expert should help you solve
 
-* [Author is untrustworthy](#author-is-untrusthworthy)   
+* [Author is untrustworthy](#author-is-untrustworthy)   
 * [Collection process is opaque](#collection-process-is-opaque)      
 * [Data asserts unrealistic precision](#data-asserts-unrealistic-precision)  
 * [There are inexplicable outliers](#there-are-inexplicable-outliers)
