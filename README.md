@@ -31,7 +31,7 @@ This work is licensed under a [Creative Commons Attribution-NonCommercial 4.0 In
 * [Data are too coarse](#data-are-too-coarse)          
 * [Totals differ from published aggregates](#totals-differ-from-published-aggregates)
 * [Spreadsheet has 65536 rows](#spreadsheet-has-65536-rows)      
-* [Spreadsheet has dates in 1900 or 1904](#spreadsheet-has-dates-in-1900-or-1904)      
+* [Spreadsheet has dates in 1900, 1904, 1969, or 1970](#spreadsheet-has-dates-in-1900-1904-1969-or-1970)      
 * [Text has been converted to numbers](#text-has-been-converted-to-numbers)
 
 ## Issues that you should solve
@@ -80,11 +80,12 @@ Anytime you're working with data that has missing values you should ask yourself
 
 ### Zeros replace missing values
 
-Worse than missing values is when an arbitrary value is used instead. This can be the result of a human not thinking through the implications or it can happen as the result of automated processes that simply don't know how to handle null values. In any case if you see zeros in a series of numbers you should ask yourself if that values is really the number `0` or if it instead means "nothing". If you aren't sure, ask your source.
+Worse than missing values is when an arbitrary value is used instead. This can be the result of a human not thinking through the implications or it can happen as the result of automated processes that simply don't know how to handle null values. In any case if you see zeros in a series of numbers you should ask yourself if that values is really the number `0` or if it instead means "nothing". If you aren't sure, ask your source. The same caution should be exercised for other data types where a `0` is represented in other ways. For example a false `0` value for a date is often displayed as `1970-01-01T00:00:00Z` or `1969-12-31T24:59:59Z` which is the [Unix epoch for timestamps](https://en.wikipedia.org/wiki/Unix_time#Encoding_time_as_a_number). A false `0` for a location might be represented as `0°00'00.0"N+0°00'00.0"E` or simply `0°N 0°E` which is a point in the Atlantic Ocean just south of Ghana often referred to as [Null Island](https://en.wikipedia.org/wiki/Null_Island).
 
 See also:
 
-* [Suspicious numbers are present](#suspicious-numbers-are-present)    
+* [Suspicious numbers are present](#suspicious-numbers-are-present) 
+* [Spreadsheet has dates in 1900, 1904, 1969, or 1970](#spreadsheet-has-dates-in-1900-1904-1969-or-1970)   
 
 ### Data are missing you know should be there
 
@@ -151,13 +152,28 @@ See also:
 
 ### Suspicious numbers are present
 
-If you see any of these numbers in your data, treat them with an abundance of caution:
+If you see any of these values in your data, treat them with an abundance of caution:
+
+Numbers:
 
 * [65,535](https://en.wikipedia.org/wiki/65535_%28number%29)
 * [2,147,483,647](https://en.wikipedia.org/wiki/2147483647_%28number%29)
 * [4,294,967,295](https://en.wikipedia.org/wiki/4294967295)
 * [555-3485](https://en.wikipedia.org/wiki/555_%28telephone_number%29)
 * 99999
+
+Dates: 
+
+* [`1970-01-01T00:00:00Z`](https://en.wikipedia.org/wiki/Unix_time#Encoding_time_as_a_number)
+* [`1969-12-31T24:59:59Z`](https://en.wikipedia.org/wiki/Unix_time#Encoding_time_as_a_number)
+* [`January 1st, 1900`](#spreadsheet-has-dates-in-1900-1904-1969-or-1970)
+* [`January 1st, 1904`](#spreadsheet-has-dates-in-1900-1904-1969-or-1970)
+
+Locations:
+
+* [`0°00'00.0"N+0°00'00.0"E`](https://en.wikipedia.org/wiki/Null_Island) or simply [`0°N 0°E`](https://en.wikipedia.org/wiki/Null_Island)
+
+
 
 Each of these numbers has an indication of a particular error made by either a human or a computer. If you see them, ensure they actually mean what you think they mean!
 
@@ -189,9 +205,11 @@ These sorts of discrepancies between published statistics and raw data can be a 
 
 The maximum number of rows an old-fashioned Excel spreadsheet was allowed to have was 65,536. If you receive a dataset with that number of rows you have almost certainly been given truncated data. Go back and ask for the rest. Newer versions of Excel allowed for 1,048,576 rows, so it's less likely you'll be working with data that hits the limit.
 
-### Spreadsheet has dates in 1900 or 1904
+### Spreadsheet has dates in 1900, 1904, 1969, or 1970
 
 For reasons beyond obscure, Excel's default date from which it counts all other dates is `January 1st, 1900`, *unless* you're using Excel on a Mac, in which case it's `January 1st, 1904`. There are a variety of ways in which data in Excel can be entered or calculated incorrectly and end up as one of these two dates. If you spot them in your data, it's probably an issue.
+
+Many databases and applications will often generate a date of `1970-01-01T00:00:00Z` or `1969-12-31T24:59:59Z` which is the [Unix epoch for timestamps](https://en.wikipedia.org/wiki/Unix_time#Encoding_time_as_a_number). In other words this is what happens when a system tries to display an empty value or a `0` value as a date. 
 
 ### Text has been converted to numbers
 
