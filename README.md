@@ -6,7 +6,7 @@ As a reporter your world is full of data. And those data are full of problems. T
 
 Most of these problems can be solved. Some of them can't be solved and that means you should not use the data. Others can't be solved, but with precautions you can continue using the data. In order to allow for these ambiguities, this guide is organized by who is best equipped to solve the problem: you, your source, an expert, etc. In the description of each problem you may also find suggestions for what to do if that person can't help you.
 
-You can not possibly review every dataset you encounter with for all of these problems. If you try to do that you will never get anything published. However, by familiarizing yourself with the kinds of issues you are likely to encounter you will have a better chance of identifying an issue before it causes you to make a mistake.
+You cannot possibly review every dataset you encounter for all of these problems. If you try to do that, you will never get anything published. However, by familiarizing yourself with the kinds of issues you are likely to encounter, you will have a better chance of identifying an issue before it causes you to make a mistake.
 
 If you have questions about this guide please email [Chris](mailto:c@qz.com). Good luck!
 
@@ -76,11 +76,11 @@ This work is licensed under a [Creative Commons Attribution-NonCommercial 4.0 In
 
 Beware blank or "null" values in any dataset unless you are certain you know what they mean. If the data are annual, was the value for that year never collected? If it is a survey, did a respondent refuse to answer the question?
 
-Anytime you're working with data that has missing values you should ask yourself: "Do I know what the absence of this data means?" If the answer is no, you should ask your source.
+Any time you're working with data that has missing values you should ask yourself: "Do I know what the absence of this data means?" If the answer is no, you should ask your source.
 
 ### Zeros replace missing values
 
-Worse than missing values is when an arbitrary value is used instead. This can be the result of a human not thinking through the implications or it can happen as the result of automated processes that simply don't know how to handle null values. In any case if you see zeros in a series of numbers you should ask yourself if that values is really the number `0` or if it instead means "nothing". If you aren't sure, ask your source.
+Worse than missing values is when an arbitrary value is used instead. This can be the result of a human not thinking through the implications, or it can happen as the result of automated processes that simply don't know how to handle null values. In any case, if you see a zero in a series of numbers you should ask yourself if that value is really the number `0` or if it instead means "nothing". If you aren't sure, ask your source.
 
 See also:
 
@@ -88,15 +88,15 @@ See also:
 
 ### Data are missing you know should be there
 
-Sometimes data are missing and you can't tell from the dataset itself, but you can still know because you know what the data purports to be about. If you have a dataset covering the United States then you can check to ensure all 50 states represented. (And don't forget about [the territories](https://en.wikipedia.org/wiki/Territories_of_the_United_States)—50 isn't the right number if the dataset includes Puerto Rico.) If you're dealing with a dataset of baseball players make sure it has the number of teams you expect. Verify that a few players who you know are included. Trust your intuition if something seems to missing and double-check with your source. The universe of your data might be smaller than you think.
+Sometimes data are missing and you can't tell from the dataset itself, but you can still know because you know what the data purports to be about. If you have a dataset covering the United States then you can check to ensure all 50 states represented. (And don't forget about [the territories](https://en.wikipedia.org/wiki/Territories_of_the_United_States)—50 isn't the right number if the dataset includes Puerto Rico.) If you're dealing with a dataset of baseball players make sure it has the number of teams you expect. Verify that a few players whom you know are included. Trust your intuition if something seems to missing and double-check with your source. The universe of your data might be smaller than you think.
 
 ### Rows or values are duplicated
 
-If the same row appears in your dataset twice you should find out why. Sometimes it need not be a whole row. Some campaign finance data includes "amendments" that use the same unique identifiers as the original transaction. If you didn't know that then any calculations you did with the data would be wrong. If something seems like it should be unique verify that it is. If you discover that it isn't, ask your source why.
+If the same row appears in your dataset twice you should find out why. Sometimes it need not be a whole row. Some campaign finance data includes "amendments" that use the same unique identifiers as the original transaction. If you didn't know that, then any calculations you did with the data would be wrong. If something seems like it should be unique, verify that it is. If you discover that it isn't, ask your source why.
 
 ### Spelling is inconsistent
 
-Spelling is one of the most obvious ways of telling if data has been compiled by hand. Don't just look at people's names—those are often the hardest place to detect spelling errors. Instead look for places where city names or states aren't consistent. (`Los Angelos` is one very common mistake.) If you find those, you can be pretty sure the data was compiled or edited by hand and that is always a reason to be skeptical of it. Data that has been edited by hand is the most likely to have mistakes. This doesn't mean you shouldn't use it but you may need to manually correct those mistakes or otherwise account for them in your reporting.
+Spelling is one of the most obvious ways of telling if data has been compiled by hand. Don't just look at people's names—those are often the hardest places to detect spelling errors. Instead look for places where city names or states aren't consistent. (`Los Angelos` is one very common mistake.) If you find those, you can be pretty sure the data was compiled or edited by hand and that is always a reason to be skeptical of it. Data that has been edited by hand is the most likely to have mistakes. This doesn't mean you shouldn't use it but you may need to manually correct those mistakes or otherwise account for them in your reporting.
 
 See also:
 
@@ -137,13 +137,13 @@ Bad categories can also artificially exclude data. This frequently happens with 
 
 ### Field names are ambiguous
 
-What is a `residence`? Is it where someone lives or where they pay taxes? Is it it a city or a county? Field names in data are never as specific as we would like, but particular concern should be applied to those that could obviously mean two or more things. Even if you correctly infer what the values are supposed to mean, that ambiguity could have easily caused the person collecting the data to enter the wrong value.
+What is a `residence`? Is it where someone lives or where they pay taxes? Is it a city or a county? Field names in data are never as specific as we would like, but particular concern should be applied to those that could obviously mean two or more things. Even if you correctly infer what the values are supposed to mean, that ambiguity could easily have caused the person collecting the data to enter the wrong value.
 
 ### Provenance is not documented
 
-Data can are made by a variety of kinds of individuals and organizations including businesses, governments, nonprofits and nut-job conspiracy theorists. That data can be gathered in many different ways including surveys, sensors and satellites. It may be typed, tapped or scribbled. Knowing where your data came from can give you a huge amount of insight into its limitations.
+Data can be made by a variety of kinds of individuals and organizations including businesses, governments, nonprofits and nut-job conspiracy theorists. That data can be gathered in many different ways including surveys, sensors and satellites. It may be typed, tapped or scribbled. Knowing where your data came from can give you a huge amount of insight into its limitations.
 
-Survey data, for example, is rarely exhaustive. Sensors vary in their accuracy. Governments are often disinclined to give you unbiased information. Data from a war zone may have a strong geographical bias due to the dangers of crossing battle lines. To make this situation worse, these different sources are often daisy-chained together. Academics sometimes redistribute data they got from the government. Data that is written by a doctor may be rekeyed by a nurse. Every stage in that chain is an opportunity for error. Know where your data came from.
+Survey data, for example, is rarely exhaustive. Sensors vary in their accuracy. Governments are often disinclined to give you unbiased information. Data from a war zone may have a strong geographical bias due to the dangers of crossing battle lines. To make this situation worse, these different sources are often daisy-chained together. Academics sometimes redistribute data they got from the government. Data that is written by a doctor may be rekeyed by a nurse. Every link in that chain is an opportunity for error. Know where your data came from.
 
 See also:
 
@@ -159,7 +159,7 @@ If you see any of these numbers in your data, treat them with an abundance of ca
 * [555-3485](https://en.wikipedia.org/wiki/555_%28telephone_number%29)
 * 99999
 
-Each of these numbers has an indication of a particular error made by either a human or a computer. If you see them, ensure they actually mean what you think they mean!
+Each of these numbers has an indication of a particular error made either by a human or a computer. If you see them, ensure they actually mean what you think they mean!
 
 See also:
 
@@ -170,7 +170,7 @@ See also:
 
 You've got states and you need counties. You've got employers and you need employees. They gave you years, but you want months. In many cases we get data that has been aggregated too much for our purposes.
 
-Data can not be disaggregated once it's been put together. If you're given data that's too coarse, you'll need to ask your source for something more specific. They may not have it. If they do have it they may not be able or willing to give it to you. There are many federal datasets that can't be accessed at the local level to protect the privacy of individuals who might be uniquely identified by them. (For example, a single Somali national living in western Texas.) All you can do is ask.
+Data cannot be disaggregated once it's been put together. If you're given data that's too coarse, you'll need to ask your source for something more specific. They may not have it. If they do have it they may not be able or willing to give it to you. There are many federal datasets that can't be accessed at the local level to protect the privacy of individuals who might be uniquely identified by them. (For example, a single Somali national living in western Texas.) All you can do is ask.
 
 One thing you should never ever do is divide the yearly data you have by 12 and call it the "average per month". That is **always** incorrect. Don't do it.
 
@@ -181,9 +181,9 @@ See also:
 
 ### Totals differ from published aggregates
 
-Imagine that after a long FOIA fight you receive a "complete" list of incidents of police use-of-force. You open it up and discover it has 2,467 rows. Great, time to report it out. Not so fast. Before you publish anything from that dataset go find the last time that police chief went on the record about his department's use of force. You may find that in an interview six weeks earlier he said "less than 2,000 times" or that he named a specific number and it doesn't match your dataset.
+Imagine that after a long FOIA fight you receive a "complete" list of incidents of police use-of-force. You open it up and discover it has 2,467 rows. Great, time to report it out. Not so fast. Before you publish anything from that dataset, go find the last time that police chief went on the record about his department's use of force. You may find that in an interview six weeks earlier he said "less than 2,000 times" or that he named a specific number and it doesn't match your dataset.
 
-These sorts of discrepancies between published statistics and raw data can be a very great source of leads. Often times the answer will be simple. For instance, the data you were given may not cover the same time period he was speaking about. But sometimes you'll catch them in a lie. Either way, you should make sure the published numbers match the totals for the data you're given.
+These sorts of discrepancies between published statistics and raw data can be a very great source of leads. Oftentimes the answer will be simple. For instance, the data you were given may not cover the same time period he was speaking about. But sometimes you'll catch them in a lie. Either way, you should make sure the published numbers match the totals for the data you're given.
 
 ### Spreadsheet has 65536 rows
 
@@ -213,7 +213,7 @@ Typically, this is easy to resolve by simply opening the file in any general-pur
 
 ### Data are in a PDF
 
-A tremendous amount of data—especially government data—is only available in PDF format. If you have real, textual data inside the PDF then there are several good options for extracting it. (If you've got [scanned documents](#data-are-in-scanned-documents) that's a different problem.) One excellent, free tool is [Tabula](#http://tabula.technology/). However, if you have Adobe Creative Cloud then also have access to Acrobat Pro, which has an excellent feature for exporting tables in PDFs to Excel. Either solution should be able to extract most tabular data from a PDF.
+A tremendous amount of data—especially government data—is only available in PDF format. If you have real, textual data inside the PDF then there are several good options for extracting it. (If you've got [scanned documents](#data-are-in-scanned-documents) that's a different problem.) One excellent, free tool is [Tabula](#http://tabula.technology/). However, if you have Adobe Creative Cloud then you also have access to Acrobat Pro, which has an excellent feature for exporting tables in PDFs to Excel. Either solution should be able to extract most tabular data from a PDF.
 
 See also:
 
