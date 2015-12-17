@@ -145,7 +145,7 @@ What is a `residence`? Is it where someone lives or where they pay taxes? Is it 
 
 ### Provenance is not documented
 
-Data can are made by a variety of kinds of individuals and organizations including businesses, governments, nonprofits and nut-job conspiracy theorists. That data can be gathered in many different ways including surveys, sensors and satellites. It may be typed, tapped or scribbled. Knowing where your data came from can give you a huge amount of insight into its limitations.
+Data can be made by a variety of kinds of individuals and organizations including businesses, governments, nonprofits and nut-job conspiracy theorists. That data can be gathered in many different ways including surveys, sensors and satellites. It may be typed, tapped or scribbled. Knowing where your data came from can give you a huge amount of insight into its limitations.
 
 Survey data, for example, is rarely exhaustive. Sensors vary in their accuracy. Governments are often disinclined to give you unbiased information. Data from a war zone may have a strong geographical bias due to the dangers of crossing battle lines. To make this situation worse, these different sources are often daisy-chained together. Academics sometimes redistribute data they got from the government. Data that is written by a doctor may be rekeyed by a nurse. Every stage in that chain is an opportunity for error. Know where your data came from.
 
