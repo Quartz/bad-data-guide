@@ -40,7 +40,8 @@ This work is licensed under a [Creative Commons Attribution-NonCommercial 4.0 In
 * [Line endings are garbled](#line-endings-are-garbled)
 * [Data are in a PDF](#data-are-in-a-pdf)        
 * [Data are too granular](#data-are-too-granular)        
-* [Data was entered by humans](#data-was-entered-by-humans)          
+* [Data was entered by humans](#data-was-entered-by-humans)  
+* [Data is intermingled with formatting and annotations](#data-is-intermingled-with-formatting-and-annotations)
 * [Aggregations were computed on missing values](#aggregations-were-computed-on-missing-values)      
 * [Sample is not random](#sample-is-not-random)      
 * [Margin-of-error is too large](#margin-of-error-is-too-large)      
@@ -251,6 +252,10 @@ See also:
 ### Data was entered by humans
 
 Human data entry is such a common problem that symptoms of it are mentioned in at least 10 of the other issues described here. There is no worse way to screw up data than to let a single human type it in. For example, I once acquired the complete dog licensing database for Cook County, Illinois. Instead of requiring the person registering their dog to choose a breed from a list, the creators of the system had simply given them a text field to type into. As a result this database contained at least 250 spellings of `Chihuahua`. Even with the best tools available, data this messy can't be saved. It is effectively meaningless. It's not that important with dog data, but you don't want it happening with wounded soldiers or stock tickers. Beware human-entered data.
+
+### Data is intermingled with formatting and annotations
+
+While more complex representations of data such as data in HTML and XML do allow for a clean separation between data, metadata, and the display and formatting of data, this is usually not possible with common tabluar representations of data such as a spreadsheet. Yet, people still try. A common problem with data provided as a spreadsheet is that the first few rows of data will actually be descriptions or notes about the data rather than column headings or data itself. Or a key or data dictionary may be placed in the middle of the spreadsheet. Or the spreadsheet will include multiple tables (which may have different column headings) one after the other in the same sheet rather than separated into different sheets. 
 
 ### Aggregations computed on missing values
 
