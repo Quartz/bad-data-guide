@@ -206,7 +206,10 @@ All letters are represented by computers as numbers. Encoding problems are issue
 In the vast majority of cases your text editor or spreadsheet application will figure out the correct encoding, however, if it screws it up you could publishing somebody's name with a weird character in the middle. Your source should be able to tell you what encoding your data are in. In the event they can't there are ways of guessing that are about fairly reliable. Ask a programmer.
 
 ### Line endings are garbled
-On a Mac, Excel produces csv files with the wrong line endings, which causes problems for git (amongst other things). [source](https://nicercode.github.io/blog/2013-04-30-excel-and-line-endings/). Quickly fix isolated cases opening the file with a different tool and re-saving. For issues with many files, see link.
+
+All text and "text data" files, such as CSV, use invisible characters to represent the ends of lines. Windows, Mac and Linux computers have historically disagreed about what these line ending characters should be. Attempting to open a file saved on one operating system from another operating system can sometimes cause Excel or other applications to fail to properly identify the line breaks.
+
+Typically, this is easy to resolve by simply opening the file in any general-purpose text editor and re-saving it. If the file is exceptionally large you may need to consider using a command-line tool or enlisting the help of a programmer. You can read more about this issue [here](https://nicercode.github.io/blog/2013-04-30-excel-and-line-endings/).
 
 ### Data are in a PDF
 
