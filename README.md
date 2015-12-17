@@ -379,7 +379,7 @@ Outside of hard science, few things are routinely measured with more than two de
 
 I recently created a dataset of how long it takes for messages to reach different destinations over the internet. All of the times were in the range from `0.05` to `0.8` seconds, except for three. The other three were all over `5,000` seconds. This is a major red flag that something has gone wrong in the production of the data. In this particular case an error in the code I wrote caused some failures to continue counting while all other messages were being sent and received.
 
-Outliers such as these can dramatically screw up your statistics—especially if you're using averages. (You should probably be using medians.) Whenever you have a new dataset it is a good idea to take a look at the largest and smallest values and ensure they are in a reasonable range. If the data justifies it you may also want to do a more statistically rigorous analysis using standard deviations or median deviations.
+Outliers such as these can dramatically screw up your statistics—especially if you're using averages. (You should probably be using medians.) Whenever you have a new dataset it is a good idea to take a look at the largest and smallest values and ensure they are in a reasonable range. If the data justifies it you may also want to do a more statistically rigorous analysis using [standard deviations](https://en.wikipedia.org/wiki/Standard_deviation) or [median deviations](https://en.wikipedia.org/wiki/Median_absolute_deviation).
 
 As a side-benefit of doing this work, outliers are often a great way to find story leads. If there really was one country where it took 5,000 times as long to send a message over the internet, that would be a great story.
 
