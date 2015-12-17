@@ -255,7 +255,9 @@ Human data entry is such a common problem that symptoms of it are mentioned in a
 
 ### Data is intermingled with formatting and annotations
 
-While more complex representations of data such as data in HTML and XML do allow for a clean separation between data, metadata, and the display and formatting of data, this is usually not possible with common tabluar representations of data such as a spreadsheet. Yet, people still try. A common problem with data provided as a spreadsheet is that the first few rows of data will actually be descriptions or notes about the data rather than column headings or data itself. Or a key or data dictionary may be placed in the middle of the spreadsheet. Or the spreadsheet will include multiple tables (which may have different column headings) one after the other in the same sheet rather than separated into different sheets. 
+Complex representations of data such as data in HTML and XML allow for a clean separation between data and formatting, but this is not the case for common tabular representations of data such as a spreadsheet. Yet, people still try. A common problem with data provided as a spreadsheet is that the first few rows of data will actually be descriptions or notes about the data rather than column headings or data itself. A key or data dictionary may also be placed in the middle of the spreadsheet. Header rows may be repeated. Or the spreadsheet will include multiple tables (which may have different column headings) one after the other in the same sheet rather than separated into different sheets.
+
+In all of these cases the main solution is simply to identify the problem. Obviously trying to perform any analysis on a spreadsheet that has these kinds of problems will fail, sometimes for non-obvious reasons. When looking at new data for the first time it's always a good idea to ensure there aren't extra header rows or other formatting characters inserted with the data.
 
 ### Aggregations computed on missing values
 
