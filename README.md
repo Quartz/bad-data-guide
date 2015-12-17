@@ -259,7 +259,7 @@ Complex representations of data such as data in HTML and XML allow for a clean s
 
 In all of these cases the main solution is simply to identify the problem. Obviously trying to perform any analysis on a spreadsheet that has these kinds of problems will fail, sometimes for non-obvious reasons. When looking at new data for the first time it's always a good idea to ensure there aren't extra header rows or other formatting characters inserted with the data.
 
-### Aggregations computed on missing values
+### Aggregations were computed on missing values
 
 Imagine a dataset with 100 rows and a column called `cost`. In 50 of the rows the `cost` column is blank. What is the average of that column? Is it `sum_of_cost / 50` or `sum_of_cost / 100`? There is no one definitive answer. In general, if you're going to compute aggregates on columns that are missing data, you can safely do so by filtering out the missing rows first, but be careful not to compare aggregates from two different columns where different rows were missing values! In some cases the missing values might also be legitimately interpreted as `0`. If you're not sure, ask an expert or just don't do it.
 
