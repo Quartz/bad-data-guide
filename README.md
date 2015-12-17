@@ -391,7 +391,7 @@ For example, the United Nations [Gender Inequality Index](p.org/en/content/gende
 
 ### Results have been p-hacked
 
-P-hacking is manipulating the threshold at which results are deemed to be statistically significant, so that a study appears to show stronger conclusions than it otherwise would. There has been some [great reporting](http://fivethirtyeight.com/features/science-isnt-broken) on this problem.
+P-hacking is intentionally altering the data, changing the statistical analysis, or selectively reporting results in order to have statistically significant findings. Examples of this include: stop collecting data once you have a significant results, remove observations to get a significant result, or perform many analyses and only report the few that are significant. There has been some [good reporting](http://fivethirtyeight.com/features/science-isnt-broken) on this problem.
 
 If you're going to publish the results of a study you need to understand what the p-value is, what that means and then make an educated decision about whether the results are worth using. Lots and lots of garbage study results make it into major publications because journalists don't understand p-values.
 
