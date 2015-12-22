@@ -71,7 +71,7 @@ This work is licensed under a [Creative Commons Attribution-NonCommercial 4.0 In
 
 # Detailed list of all problems
 
-## Issues that are your source should solve
+## Issues that your source should solve
 
 ### Values are missing
 
