@@ -427,7 +427,7 @@ Thanks to FOIA laws it is frequently the case that governments are required to g
 
 It is possible to extract text from images and turn it back into data. This is done through a process called optical-character recognition (OCR). Modern OCR can often be almost 100% accurate, but it very much depends on the nature of the document. Anytime you use OCR to extract data you will want to have a process for validating the results match the original.
 
-There are many websites you can upload a document to for OCR, but there are also free tools that a programmer may have able to tune for your specific documents. Ask them what the best strategy is for the particular documents you have.
+There are many websites you can upload a document to for OCR, but there are also free tools that a programmer may be able to tune for your specific documents. Ask them what the best strategy is for the particular documents you have.
 
 See also:
 
