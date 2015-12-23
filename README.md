@@ -413,7 +413,7 @@ Beware any data that purports to represent something that you could not possibly
 
 ### Data are aggregated to the wrong categories or geographies
 
-Sometimes your data are at about the right level of detail (neither [too coarse](#data-are-too-coarse) nor [too granular](#data-are-too-granular)), but it has been aggregated to different grouping than you want. This classic example of this is data that is aggregated by zip codes that you would prefer to have by city neighborhoods. In many cases this is an impossible problem to solve without getting more granular data from your source, but somtimes the data can be proportionally mapped from one group to another. This must be undertaken only with careful understanding of the [margin-of-error](#margin-of-error-is-too-large) that may be introduced in the process. If you've got data aggregated to the wrong groups, ask a programmer if it is possible to re-aggregate it.
+Sometimes your data are at about the right level of detail (neither [too coarse](#data-are-too-coarse) nor [too granular](#data-are-too-granular)), but it has been aggregated to different grouping than you want. This classic example of this is data that is aggregated by zip codes that you would prefer to have by city neighborhoods. In many cases this is an impossible problem to solve without getting more granular data from your source, but sometimes the data can be proportionally mapped from one group to another. This must be undertaken only with careful understanding of the [margin-of-error](#margin-of-error-is-too-large) that may be introduced in the process. If you've got data aggregated to the wrong groups, ask a programmer if it is possible to re-aggregate it.
 
 See also:
 
