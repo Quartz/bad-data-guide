@@ -345,7 +345,7 @@ See also:
 
 Crime statistics are often manipulated for political purposes by comparing to a year when crime was very high. This can expressed either as a change (down `60%` since 2004) or via an index (`40`, where 2004 = 100). In either of these cases, 2004 may or may not be an appropriate year for comparison. It could have been an unusually high crime year.
 
-This also happens when comparing places. If I want to make one country look bad, I simply express the data about it relative to whichever country which is doing the best.
+This also happens when comparing places. If I want to make one country look bad, I simply express the data about it relative to whichever country is doing the best.
 
 This problem tends to crop up in subjects where people have a strong confirmation bias. ("Just as I thought, crime is up!") Whenever possible try comparing rates from several different starting points to see how the numbers shift. And whatever you do, *don't use this technique yourself* to make a point you think is important. That's inexcusable.
 
