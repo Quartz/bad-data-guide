@@ -119,7 +119,7 @@ Which date is in September:
 * `10/9/15`
 * `9/10/15`
 
-If the first one was written by a European and the second one by an American then they both are. Without knowing the history of the data you can't know for sure. Know where your data came from and be sure that it was all created by folks from the same continent.
+If the first one was written by a European and the second one by an American [then they both are](https://en.wikipedia.org/wiki/Date_format_by_country). Without knowing the history of the data you can't know for sure. Know where your data came from and be sure that it was all created by folks from the same continent.
 
 * [Data was entered by humans](#data-was-entered-by-humans)
 * [Provenance is not documented](#provenance-is-not-documented)   
