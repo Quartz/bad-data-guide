@@ -102,6 +102,8 @@ If the same row appears in your dataset twice you should find out why. Sometimes
 
 Spelling is one of the most obvious ways of telling if data has been compiled by hand. Don't just look at people's names—those are often the hardest place to detect spelling errors. Instead look for places where city names or states aren't consistent. (`Los Angelos` is one very common mistake.) If you find those, you can be pretty sure the data was compiled or edited by hand and that is always a reason to be skeptical of it. Data that has been edited by hand is the most likely to have mistakes. This doesn't mean you shouldn't use it but you may need to manually correct those mistakes or otherwise account for them in your reporting.
 
+[OpenRefine's](http://openrefine.org/) utility for [text clustering](https://github.com/OpenRefine/OpenRefine/wiki/Clustering) can help streamline the spelling correction process by suggesting close matches between inconsistent values within a column (for example, matching `Los Angelos` and `Los Angeles`). Be sure, however, to [document the changes you make](https://github.com/OpenRefine/OpenRefine/wiki/Exporters) so as to ensure [good data provenance](#provenance-is-not-documented).
+
 See also:
 
 * [Data was entered by humans](#data-was-entered-by-humans)    
