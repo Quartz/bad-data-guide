@@ -71,7 +71,7 @@ This work is licensed under a [Creative Commons Attribution-NonCommercial 4.0 In
 
 # Detailed list of all problems
 
-## Issues that are your source should solve
+## Issues that your source should solve
 
 ### Values are missing
 
@@ -347,7 +347,7 @@ See also:
 
 Crime statistics are often manipulated for political purposes by comparing to a year when crime was very high. This can expressed either as a change (down `60%` since 2004) or via an index (`40`, where 2004 = 100). In either of these cases, 2004 may or may not be an appropriate year for comparison. It could have been an unusually high crime year.
 
-This also happens when comparing places. If I want to make one country look bad, I simply express the data about it relative to whichever country which is doing the best.
+This also happens when comparing places. If I want to make one country look bad, I simply express the data about it relative to whichever country is doing the best.
 
 This problem tends to crop up in subjects where people have a strong confirmation bias. ("Just as I thought, crime is up!") Whenever possible try comparing rates from several different starting points to see how the numbers shift. And whatever you do, *don't use this technique yourself* to make a point you think is important. That's inexcusable.
 
@@ -415,7 +415,7 @@ Beware any data that purports to represent something that you could not possibly
 
 ### Data are aggregated to the wrong categories or geographies
 
-Sometimes your data are at about the right level of detail (neither [too coarse](#data-are-too-coarse) nor [too granular](#data-are-too-granular)), but it has been aggregated to different grouping than you want. This classic example of this is data that is aggregated by zip codes that you would prefer to have by city neighborhoods. In many cases this is an impossible problem to solve without getting more granular data from your source, but somtimes the data can be proportionally mapped from one group to another. This must be undertaken only with careful understanding of the [margin-of-error](#margin-of-error-is-too-large) that may be introduced in the process. If you've got data aggregated to the wrong groups, ask a programmer if it is possible to re-aggregate it.
+Sometimes your data are at about the right level of detail (neither [too coarse](#data-are-too-coarse) nor [too granular](#data-are-too-granular)), but it has been aggregated to different grouping than you want. This classic example of this is data that is aggregated by zip codes that you would prefer to have by city neighborhoods. In many cases this is an impossible problem to solve without getting more granular data from your source, but sometimes the data can be proportionally mapped from one group to another. This must be undertaken only with careful understanding of the [margin-of-error](#margin-of-error-is-too-large) that may be introduced in the process. If you've got data aggregated to the wrong groups, ask a programmer if it is possible to re-aggregate it.
 
 See also:
 
@@ -429,7 +429,7 @@ Thanks to FOIA laws it is frequently the case that governments are required to g
 
 It is possible to extract text from images and turn it back into data. This is done through a process called optical-character recognition (OCR). Modern OCR can often be almost 100% accurate, but it very much depends on the nature of the document. Anytime you use OCR to extract data you will want to have a process for validating the results match the original.
 
-There are many websites you can upload a document to for OCR, but there are also free tools that a programmer may have able to tune for your specific documents. Ask them what the best strategy is for the particular documents you have.
+There are many websites you can upload a document to for OCR, but there are also free tools that a programmer may be able to tune for your specific documents. Ask them what the best strategy is for the particular documents you have.
 
 See also:
 
