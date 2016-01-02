@@ -81,7 +81,7 @@ Any time you're working with data that has missing values you should ask yoursel
 
 ### Zeros replace missing values
 
-Worse than a missing value is when an arbitrary value is used instead. This can be the result of a human not thinking through the implications or it can happen as the result of automated processes that simply don't know how to handle null values. In any case, if you see zeros in a series of numbers you should ask yourself if those values are really the number `0` or if they instead means "nothing". If you aren't sure, ask your source.
+Worse than a missing value is when an arbitrary value is used instead. This can be the result of a human not thinking through the implications or it can happen as the result of automated processes that simply don't know how to handle null values. In any case, if you see zeros in a series of numbers you should ask yourself if those values are really the number `0` or if they instead means "nothing". (`-1` is also sometimes used this way.) If you aren't sure, ask your source.
 
 The same caution should be exercised for other non-numerical values where a `0` may be represented in another way. For example a false `0` value for a date is often displayed as `1970-01-01T00:00:00Z` or `1969-12-31T24:59:59Z` which is the [Unix epoch for timestamps](https://en.wikipedia.org/wiki/Unix_time#Encoding_time_as_a_number). A false `0` for a location might be represented as `0°00'00.0"N+0°00'00.0"E` or simply `0°N 0°E` which is a point in the Atlantic Ocean just south of Ghana often referred to as [Null Island](https://en.wikipedia.org/wiki/Null_Island).
 
@@ -161,22 +161,25 @@ If you see any of these values in your data, treat them with an abundance of cau
 
 Numbers:
 
-* [65,535](https://en.wikipedia.org/wiki/65535_%28number%29)
-* [2,147,483,647](https://en.wikipedia.org/wiki/2147483647_%28number%29)
-* [4,294,967,295](https://en.wikipedia.org/wiki/4294967295)
-* [555-3485](https://en.wikipedia.org/wiki/555_%28telephone_number%29)
-* 99999
+* [`65,535`](https://en.wikipedia.org/wiki/65535_%28number%29)
+* [`2,147,483,647`](https://en.wikipedia.org/wiki/2147483647_%28number%29)
+* [`4,294,967,295`](https://en.wikipedia.org/wiki/4294967295)
+* [`555-3485`](https://en.wikipedia.org/wiki/555_%28telephone_number%29)
+* `99999` (or any other long sequence of 9's)
+* `00000` (or any other sequence of 0's)
 
 Dates:
 
 * [`1970-01-01T00:00:00Z`](https://en.wikipedia.org/wiki/Unix_time#Encoding_time_as_a_number)
-* [`1969-12-31T24:59:59Z`](https://en.wikipedia.org/wiki/Unix_time#Encoding_time_as_a_number)
+* [`1969-12-31T23:59:59Z`](https://en.wikipedia.org/wiki/Unix_time#Encoding_time_as_a_number)
 * [`January 1st, 1900`](#spreadsheet-has-dates-in-1900-1904-1969-or-1970)
 * [`January 1st, 1904`](#spreadsheet-has-dates-in-1900-1904-1969-or-1970)
 
 Locations:
 
 * [`0°00'00.0"N+0°00'00.0"E`](https://en.wikipedia.org/wiki/Null_Island) or simply [`0°N 0°E`](https://en.wikipedia.org/wiki/Null_Island)
+* US zip code `12345` (Schenectady, New York)
+* US zip code `90210` (Beverly Hills, CA)
 
 Each of these numbers has an indication of a particular error made by either a human or a computer. If you see them, ensure they actually mean what you think they mean!
 
