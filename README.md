@@ -2,7 +2,7 @@
 
 **An exhaustive reference to problems seen in real-world data along with suggestions on how to resolve them.**
 
-As a reporter your world is full of data. And those data are full of problems. This guide presents thorough descriptions and possible solutions to many of the kinds of problems that you will encounter when working with data.
+As a reporter your world is full of data. And those data are full of problems. This guide presents thorough descriptions and suggested solutions to many of the kinds of problems that you will encounter when working with data.
 
 Most of these problems can be solved. Some of them can't be solved and that means you should not use the data. Others can't be solved, but with precautions you can continue using the data. In order to allow for these ambiguities, this guide is organized by who is best equipped to solve the problem: you, your source, an expert, etc. In the description of each problem you may also find suggestions for what to do if that person can't help you.
 
@@ -40,14 +40,14 @@ This work is licensed under a [Creative Commons Attribution-NonCommercial 4.0 In
 * [Line endings are garbled](#line-endings-are-garbled)
 * [Data are in a PDF](#data-are-in-a-pdf)        
 * [Data are too granular](#data-are-too-granular)        
-* [Data was entered by humans](#data-was-entered-by-humans)  
-* [Data is intermingled with formatting and annotations](#data-is-intermingled-with-formatting-and-annotations)
+* [Data were entered by humans](#data-were-entered-by-humans)  
+* [Data are intermingled with formatting and annotations](#data-are-intermingled-with-formatting-and-annotations)
 * [Aggregations were computed on missing values](#aggregations-were-computed-on-missing-values)      
 * [Sample is not random](#sample-is-not-random)      
 * [Margin-of-error is too large](#margin-of-error-is-too-large)      
 * [Margin-of-error is unknown](#margin-of-error-is-unknown)
 * [Sample is biased](#sample-is-biased)      
-* [Data has been manually edited](#data-has-been-manually-edited)      
+* [Data have been manually edited](#data-have-been-manually-edited)      
 * [Inflation skews the data](#inflation-skews-the-data)      
 * [Natural/seasonal variation skews the data](#naturalseasonal-variation-skews-the-data)
 * [Timeframe has been manipulated](#timeframe-has-been-manipulated)      
@@ -57,12 +57,12 @@ This work is licensed under a [Creative Commons Attribution-NonCommercial 4.0 In
 
 * [Author is untrustworthy](#author-is-untrustworthy)   
 * [Collection process is opaque](#collection-process-is-opaque)      
-* [Data asserts unrealistic precision](#data-asserts-unrealistic-precision)  
+* [Data assert unrealistic precision](#data-assert-unrealistic-precision)  
 * [There are inexplicable outliers](#there-are-inexplicable-outliers)
 * [An index masks underlying variation](#an-index-masks-underlying-variation)       
 * [Results have been p-hacked](#results-have-been-p-hacked)        
 * [Benford's Law fails](#benfords-law-fails)  
-* [It's too good to be true](#its-too-good-to-be-true)       
+* [Too good to be true](#too-good-to-be-true)       
 
 ## Issues a programmer should help you solve
 
@@ -77,13 +77,13 @@ This work is licensed under a [Creative Commons Attribution-NonCommercial 4.0 In
 
 Beware blank or "null" values in any dataset unless you are certain you know what they mean. If the data are annual, was the value for that year never collected? If it is a survey, did a respondent refuse to answer the question?
 
-Any time you're working with data that has missing values you should ask yourself: "Do I know what the absence of this data means?" If the answer is no, you should ask your source.
+Any time you're working with data that has missing values you should ask yourself: "Do I know what the absence of this value means?" If the answer is no, you should ask your source.
 
 ### Zeros replace missing values
 
-Worse than missing values is when an arbitrary value is used instead. This can be the result of a human not thinking through the implications or it can happen as the result of automated processes that simply don't know how to handle null values. In any case, if you see zeros in a series of numbers you should ask yourself if those values are really the number `0` or if they instead means "nothing". If you aren't sure, ask your source.
+Worse than a missing value is when an arbitrary value is used instead. This can be the result of a human not thinking through the implications or it can happen as the result of automated processes that simply don't know how to handle null values. In any case, if you see zeros in a series of numbers you should ask yourself if those values are really the number `0` or if they instead means "nothing". If you aren't sure, ask your source.
 
-The same caution should be exercised for other non-numerical data  where a `0` may be represented in another way. For example a false `0` value for a date is often displayed as `1970-01-01T00:00:00Z` or `1969-12-31T24:59:59Z` which is the [Unix epoch for timestamps](https://en.wikipedia.org/wiki/Unix_time#Encoding_time_as_a_number). A false `0` for a location might be represented as `0°00'00.0"N+0°00'00.0"E` or simply `0°N 0°E` which is a point in the Atlantic Ocean just south of Ghana often referred to as [Null Island](https://en.wikipedia.org/wiki/Null_Island).
+The same caution should be exercised for other non-numerical values where a `0` may be represented in another way. For example a false `0` value for a date is often displayed as `1970-01-01T00:00:00Z` or `1969-12-31T24:59:59Z` which is the [Unix epoch for timestamps](https://en.wikipedia.org/wiki/Unix_time#Encoding_time_as_a_number). A false `0` for a location might be represented as `0°00'00.0"N+0°00'00.0"E` or simply `0°N 0°E` which is a point in the Atlantic Ocean just south of Ghana often referred to as [Null Island](https://en.wikipedia.org/wiki/Null_Island).
 
 See also:
 
@@ -96,23 +96,23 @@ Sometimes data are missing and you can't tell from the dataset itself, but you c
 
 ### Rows or values are duplicated
 
-If the same row appears in your dataset twice you should find out why. Sometimes it need not be a whole row. Some campaign finance data includes "amendments" that use the same unique identifiers as the original transaction. If you didn't know that then any calculations you did with the data would be wrong. If something seems like it should be unique verify that it is. If you discover that it isn't, ask your source why.
+If the same row appears in your dataset more than once you should find out why. Sometimes it need not be a whole row. Some campaign finance data include "amendments" that use the same unique identifiers as the original transaction. If you didn't know that then any calculations you did with the data would be wrong. If something seems like it should be unique verify that it is. If you discover that it isn't, ask your source why.
 
 ### Spelling is inconsistent
 
-Spelling is one of the most obvious ways of telling if data has been compiled by hand. Don't just look at people's names—those are often the hardest place to detect spelling errors. Instead look for places where city names or states aren't consistent. (`Los Angelos` is one very common mistake.) If you find those, you can be pretty sure the data was compiled or edited by hand and that is always a reason to be skeptical of it. Data that has been edited by hand is the most likely to have mistakes. This doesn't mean you shouldn't use it but you may need to manually correct those mistakes or otherwise account for them in your reporting.
+Spelling is one of the most obvious ways of telling if data have been compiled by hand. Don't just look at people's names—those are often the hardest place to detect spelling errors. Instead look for places where city names or states aren't consistent. (`Los Angelos` is one very common mistake.) If you find those, you can be pretty sure the data were compiled or edited by hand and that is always a reason to be skeptical of it. Data that have been edited by hand are the most likely to have mistakes. This doesn't mean you shouldn't use them but you may need to manually correct those mistakes or otherwise account for them in your reporting.
 
 [OpenRefine's](http://openrefine.org/) utility for [text clustering](https://github.com/OpenRefine/OpenRefine/wiki/Clustering) can help streamline the spelling correction process by suggesting close matches between inconsistent values within a column (for example, matching `Los Angelos` and `Los Angeles`). Be sure, however, to [document the changes you make](https://github.com/OpenRefine/OpenRefine/wiki/Exporters) so as to ensure [good data provenance](#provenance-is-not-documented).
 
 See also:
 
-* [Data was entered by humans](#data-was-entered-by-humans)    
+* [Data were entered by humans](#data-were-entered-by-humans)    
 
 ### Name order is inconsistent
 
-Does your data have Middle Eastern or East Asian names in it? Are you sure the surnames are always in the same place? Is it possible anyone in your dataset [uses a mononym](https://en.wikipedia.org/wiki/Indonesian_names#Indonesian_naming_system)? These are the sorts of things that data creators habitually get wrong. If you're working with a list of ethnically diverse names—which is any list of names—then you should do at least a cursory review before assuming that joining the `first_name` and `last_name` columns will give you something that is appropriate to publish.
+Does your data have Middle Eastern or East Asian names in it? Are you sure the surnames are always in the same place? Is it possible anyone in your dataset [uses a mononym](https://en.wikipedia.org/wiki/Indonesian_names#Indonesian_naming_system)? These are the sorts of things that data makers habitually get wrong. If you're working with a list of ethnically diverse names—which is any list of names—then you should do at least a cursory review before assuming that joining the `first_name` and `last_name` columns will give you something that is appropriate to publish.
 
-* [Data was entered by humans](#data-was-entered-by-humans)  
+* [Data were entered by humans](#data-were-entered-by-humans)  
 
 ### Date formats are inconsistent
 
@@ -123,12 +123,12 @@ Which date is in September:
 
 If the first one was written by a European and the second one by an American [then they both are](https://en.wikipedia.org/wiki/Date_format_by_country). Without knowing the history of the data you can't know for sure. Know where your data came from and be sure that it was all created by folks from the same continent.
 
-* [Data was entered by humans](#data-was-entered-by-humans)
+* [Data were entered by humans](#data-were-entered-by-humans)
 * [Provenance is not documented](#provenance-is-not-documented)   
 
 ### Units are not specified
 
-Neither `weight` nor `cost` conveys any information about the unit of measurement. Don't be too quick to assume that data produced by in the United States is in pounds and dollars. Scientific data will often be in metric. Foreign prices may be in their local currency. If data doesn't spell out its units, go back to your source and find out. Even if it does spell out its units always be wary of meanings that may have shifted over time. A dollar in 2010 is not a dollar today. And a [ton](https://en.wikipedia.org/wiki/Short_ton) is not a [ton](https://en.wikipedia.org/wiki/Long_ton) nor a [tonne](https://en.wikipedia.org/wiki/Tonne).
+Neither `weight` nor `cost` conveys any information about the unit of measurement. Don't be too quick to assume that data produced within the United States are in units of pounds and dollars. Scientific data are often metric. Foreign prices may be specified in their local currency. If the data do not spell out their units, go back to your source and find out. Even if it does spell out its units always be wary of meanings that may have shifted over time. A dollar in 2010 is not a dollar today. And a [ton](https://en.wikipedia.org/wiki/Short_ton) is not a [ton](https://en.wikipedia.org/wiki/Long_ton) nor a [tonne](https://en.wikipedia.org/wiki/Tonne).
 
 See also:
 
@@ -137,7 +137,7 @@ See also:
 
 ### Categories are badly chosen
 
-Watch out for data which purports to be only `true` or `false`, but really isn't. This is often the case with surveys where `refused` or `no answer` are also valid—and meaningful—values. Another common problem is the usage of any kind of `other` category. If the categories in a dataset are a bunch of countries and an `other`, what does that mean? Does it mean that the person collecting the data didn't know the right answer? Were they in international waters? Expatriates? Refugees?
+Watch out for values which purport to be only `true` or `false`, but really aren't. This is often the case with surveys where `refused` or `no answer` are also valid—and meaningful—values. Another common problem is the usage of any kind of `other` category. If the categories in a dataset are a bunch of countries and an `other`, what does that mean? Does it mean that the person collecting the data didn't know the right answer? Were they in international waters? Expatriates? Refugees?
 
 Bad categories can also artificially exclude data. This frequently happens with crime statistics. The FBI has defined the crime of "rape" in a variety of different ways over time. In fact, they've done such a poor job of figuring out what rape is that many criminologists argue their statistics should not be used at all. A bad definition might mean a crime is counted in a different category than you expect or that it wasn't counted at all. Be exceptionally ware of this problem when working with topics where definitions tend to be arbitrary, such as `race` or `ethnicity`.
 
@@ -147,9 +147,9 @@ What is a `residence`? Is it where someone lives or where they pay taxes? Is it 
 
 ### Provenance is not documented
 
-Data can be made by a variety of kinds of individuals and organizations including businesses, governments, nonprofits and nut-job conspiracy theorists. That data can be gathered in many different ways including surveys, sensors and satellites. It may be typed, tapped or scribbled. Knowing where your data came from can give you a huge amount of insight into its limitations.
+Data are created by a variety of kinds of individuals and organizations including businesses, governments, nonprofits and nut-job conspiracy theorists. Data are gathered in many different ways including surveys, sensors and satellites. It may be typed, tapped or scribbled. Knowing where your data came from can give you a huge amount of insight into its limitations.
 
-Survey data, for example, is rarely exhaustive. Sensors vary in their accuracy. Governments are often disinclined to give you unbiased information. Data from a war zone may have a strong geographical bias due to the dangers of crossing battle lines. To make this situation worse, these different sources are often daisy-chained together. Academics sometimes redistribute data they got from the government. Data that is written by a doctor may be rekeyed by a nurse. Every stage in that chain is an opportunity for error. Know where your data came from.
+Survey data, for example, is rarely exhaustive. Sensors vary in their accuracy. Governments are often disinclined to give you unbiased information. Data from a war zone may have a strong geographical bias due to the danger of crossing battle lines. To make this situation worse, these different sources are often daisy-chained together. Policy analysts frequently redistribute data they got from the government. Data that were written by a doctor may be keyed by a nurse. Every stage in that chain is an opportunity for error. Know where your data came from.
 
 See also:
 
@@ -187,11 +187,11 @@ See also:
 
 ### Data are too coarse
 
-You've got states and you need counties. You've got employers and you need employees. They gave you years, but you want months. In many cases we get data that has been aggregated too much for our purposes.
+You've got states and you need counties. You've got employers and you need employees. They gave you years, but you want months. In many cases we get data that have been aggregated too much for our purposes.
 
-Data cannot be disaggregated once it's been put together. If you're given data that's too coarse, you'll need to ask your source for something more specific. They may not have it. If they do have it they may not be able or willing to give it to you. There are many federal datasets that can't be accessed at the local level to protect the privacy of individuals who might be uniquely identified by them. (For example, a single Somali national living in western Texas.) All you can do is ask.
+Data usually cannot be disaggregated once they have been merged together. If you're given data that are too coarse, you'll need to ask your source for something more specific. They may not have it. If they do have it they may not be able or willing to give it to you. There are many federal datasets that can't be accessed at the local level to protect the privacy of individuals who might be uniquely identified by them. (For example, a single Somali national living in western Texas.) All you can do is ask.
 
-One thing you should never ever do is divide the yearly data you have by 12 and call it the "average per month". That is **always** incorrect. Don't do it.
+One thing you should never ever do is divide a yearly value by 12 and call it the "average per month". Without knowing the distribution of the values, that number will be meaningless. (Maybe all instances occurred in one month or one season. Maybe the data follows an exponential trend instead of a linear one.) It's wrong. Don't do it.
 
 See also:
 
@@ -234,7 +234,7 @@ Typically, this is easy to resolve by simply opening the file in any general-pur
 
 ### Data are in a PDF
 
-A tremendous amount of data—especially government data—is only available in PDF format. If you have real, textual data inside the PDF then there are several good options for extracting it. (If you've got [scanned documents](#data-are-in-scanned-documents) that's a different problem.) One excellent, free tool is [Tabula](#http://tabula.technology/). However, if you have Adobe Creative Cloud then also have access to Acrobat Pro, which has an excellent feature for exporting tables in PDFs to Excel. Either solution should be able to extract most tabular data from a PDF.
+A tremendous amount of data—especially government data—are only available in PDF format. If you have real, textual data inside the PDF then there are several good options for extracting them. (If you've got [scanned documents](#data-are-in-scanned-documents) that's a different problem.) One excellent, free tool is [Tabula](#http://tabula.technology/). However, if you have Adobe Creative Cloud then also have access to Acrobat Pro, which has an excellent feature for exporting tables in PDFs to Excel. Either solution should be able to extract most tabular data from a PDF.
 
 See also:
 
@@ -251,15 +251,15 @@ See also:
 * [Data are too coarse](#data-are-too-coarse)
 * [Data are aggregated to the wrong categories or geographies](#data-are-aggregated-to-the-wrong-categories-or-geographies).
 
-### Data was entered by humans
+### Data were entered by humans
 
-Human data entry is such a common problem that symptoms of it are mentioned in at least 10 of the other issues described here. There is no worse way to screw up data than to let a single human type it in. For example, I once acquired the complete dog licensing database for Cook County, Illinois. Instead of requiring the person registering their dog to choose a breed from a list, the creators of the system had simply given them a text field to type into. As a result this database contained at least 250 spellings of `Chihuahua`. Even with the best tools available, data this messy can't be saved. It is effectively meaningless. It's not that important with dog data, but you don't want it happening with wounded soldiers or stock tickers. Beware human-entered data.
+Human data entry is such a common problem that symptoms of it are mentioned in at least 10 of the other issues described here. There is no worse way to screw up data than to let a single human type it in, without validation. For example, I once acquired the complete dog licensing database for Cook County, Illinois. Instead of requiring the person registering their dog to choose a breed from a list, the creators of the system had simply given them a text field to type into. As a result this database contained at least 250 spellings of `Chihuahua`. Even with the best tools available, data this messy can't be saved. They are effectively meaningless. This is not that important with dog data, but you don't want it happening with wounded soldiers or stock tickers. Beware human-entered data.
 
-### Data is intermingled with formatting and annotations
+### Data are intermingled with formatting and annotations
 
-Complex representations of data such as data in HTML and XML allow for a clean separation between data and formatting, but this is not the case for common tabular representations of data such as a spreadsheet. Yet, people still try. A common problem with data provided as a spreadsheet is that the first few rows of data will actually be descriptions or notes about the data rather than column headings or data itself. A key or data dictionary may also be placed in the middle of the spreadsheet. Header rows may be repeated. Or the spreadsheet will include multiple tables (which may have different column headings) one after the other in the same sheet rather than separated into different sheets.
+Complex representations of data such HTML and XML allow for a clean separation between data and formatting, but this is not the case for common tabular representations of data such as a spreadsheet. Yet, people still try. A common problem with data provided as a spreadsheet is that the first few rows of data will actually be descriptions or notes about the data rather than column headings or data itself. A key or data dictionary may also be placed in the middle of the spreadsheet. Header rows may be repeated. Or the spreadsheet will include multiple tables (which may have different column headings) one after the other in the same sheet rather than separated into different sheets.
 
-In all of these cases the main solution is simply to identify the problem. Obviously trying to perform any analysis on a spreadsheet that has these kinds of problems will fail, sometimes for non-obvious reasons. When looking at new data for the first time it's always a good idea to ensure there aren't extra header rows or other formatting characters inserted with the data.
+In all of these cases the main solution is simply to identify the problem. Obviously trying to perform any analysis on a spreadsheet that has these kinds of problems will fail, sometimes for non-obvious reasons. When looking at new data for the first time it's always a good idea to ensure there aren't extra header rows or other formatting characters inserted amongst the data.
 
 ### Aggregations were computed on missing values
 
@@ -292,7 +292,7 @@ See also:
 
 ### Margin-of-error is unknown
 
-Sometimes the problem isn't that the margin of error is [too large](#margin-of-error-is-too-large), it's that nobody ever bothered to figure out what it was in the first place. This is one problem with unscientific polls. Without computing an MOE, it is impossible to know how accurate the results are. As a general rule, anytime you have data that's from a survey you should ask for what the MOE is. If the source can't tell you, that data probably isn't worth using for any serious analysis.
+Sometimes the problem isn't that the margin of error is [too large](#margin-of-error-is-too-large), it's that nobody ever bothered to figure out what it was in the first place. This is one problem with unscientific polls. Without computing an MOE, it is impossible to know how accurate the results are. As a general rule, anytime you have data that are from a survey you should ask for what the MOE is. If the source can't tell you, those data probably aren't worth using for any serious analysis.
 
 See also:
 
@@ -306,20 +306,20 @@ See also:
 
 * [Sample is not random](#sample-is-not-random)
 
-### Data has been manually edited
+### Data have been manually edited
 
-Manual editing is almost the same as [data that was entered by humans](#data-was-entered-by-humans) except that it happens after the fact and often with good intentions. In fact, data are often manually edited in an attempt to fix data that was originally entered by humans. Problems start to creep in when the person doing the editing doesn't have complete knowledge of the original data. I once saw someone spontaneously "correct" a name in a dataset from `Smit` to `Smith`. Was that person's name really `Smith`? I don't know, but I do know that value is now a problem. Without a record of that change, it's impossible to verify what it should be.
+Manual editing is almost the same as problem as [data being entered by humans](#data-were-entered-by-humans) except that it happens after the fact. In fact, data are often manually edited in an attempt to fix data that were originally entered by humans. Problems start to creep in when the person doing the editing doesn't have complete knowledge of the original data. I once saw someone spontaneously "correct" a name in a dataset from `Smit` to `Smith`. Was that person's name really `Smith`? I don't know, but I do know that value is now a problem. Without a record of that change, it's impossible to verify what it should be.
 
-Issues with manual editing are one reason why you always want to ensure your data has [well-documented provenance](#provenance-is-not-documented). A lack of provenance can be a good indication that someone may have monkeyed with it. Academics often get data from the government, monkey with it and then redistribute it to journalists. Without any record of their changes it's impossible to know if the changes they made were justified. Whenever feasible always try to get the *primary source* or at least the earliest version you can and then do your own analysis from that.
+Issues with manual editing are one reason why you always want to ensure your data have [well-documented provenance](#provenance-is-not-documented). A lack of provenance can be a good indication that someone may have monkeyed with it. Academics and policy analysts often get data from the government, monkey with them and then redistribute them to journalists. Without any record of their changes it's impossible to know if the changes they made were justified. Whenever feasible always try to get the *primary source* or at least the earliest version you can and then do your own analysis from that.
 
 See also:
 
 * [Provenance is not documented](#provenance-is-not-documented)
-* [Data was entered by humans](#data-was-entered-by-humans)
+* [Data were entered by humans](#data-were-entered-by-humans)
 
 ### Inflation skews the data
 
-Currency inflation means that over time money changes in value. There is no way to tell if numbers have been "inflation adjusted" just by looking at them. If you get data and you aren't sure if it's been adjusted check with your source. If it hasn't been you'll likely want to perform the adjustment. This [inflation adjuster](http://inflation-adjust.herokuapp.com/) is a good place to start.
+Currency inflation means that over time money changes in value. There is no way to tell if numbers have been "inflation adjusted" just by looking at them. If you get data and you aren't sure if they have been adjusted then check with your source. If they haven't you'll likely want to perform the adjustment. This [inflation adjuster](http://inflation-adjust.herokuapp.com/) is a good place to start.
 
 See also:
 
@@ -327,7 +327,7 @@ See also:
 
 ### Natural/seasonal variation skews the data
 
-Many types of data fluctuate naturally due to some underlying forces. The best known example of this is employment fluctuating with the seasons. Economists have developed a variety of methods of compensating for this variation. The details of those methods aren't particularly important, but it is important that you know if the data you're using has been "seasonally adjusted". If it hasn't and you want to compare employment from month to month you will probably want to get adjusted data from your source. (Adjusting it yourself is much harder than with inflation.)
+Many types of data fluctuate naturally due to some underlying forces. The best known example of this is employment fluctuating with the seasons. Economists have developed a variety of methods of compensating for this variation. The details of those methods aren't particularly important, but it is important that you know if the data you're using have been "seasonally adjusted". If they haven't and you want to compare employment from month to month you will probably want to get adjusted data from your source. (Adjusting them yourself is much harder than with inflation.)
 
 See also:
 
@@ -359,21 +359,21 @@ See also:
 
 ### Author is untrustworthy
 
-Sometimes the only data you have is from a source you would rather not rely on. In some situations that's just fine. The only people who know how many guns are made are gun manufacturers. However, if you have data from a questionable maker always check it with another expert. Better yet, check it with two or three. Don't publish data from a biased source unless you have substantial corroborating evidence.
+Sometimes the only data you have are from a source you would rather not rely on. In some situations that's just fine. The only people who know how many guns are made are gun manufacturers. However, if you have data from a questionable maker always check it with another expert. Better yet, check it with two or three. Don't publish data from a biased source unless you have substantial corroborating evidence.
 
 ### Collection process is opaque
 
-It's very easy for false assumptions, errors or outright falsehoods to be introduced into these data collection processes. For this reason it's important that methods used be transparent. It's rare that you'll know exactly how a dataset was gathered, but indications of a problem can include numbers that [assert unrealistic precision](#data-asserts-unrealistic-precision) and data that [is too good to be true](#its-too-good-to-be-true).
+It's very easy for false assumptions, errors or outright falsehoods to be introduced into these data collection processes. For this reason it's important that methods used be transparent. It's rare that you'll know exactly how a dataset was gathered, but indications of a problem can include numbers that [assert unrealistic precision](#data-asserts-unrealistic-precision) and data that [are too good to be true](#too-good-to-be-true).
 
-Sometimes the origin story may just be fishy: did such-and-such academic really interview 50 active gang members from the south side of Chicago? If the way the data was gathered seems questionable and your source can't offer you [ironcald provenance](#provenance-is-not-documented) then you should always verify with another expert that the data could reasonably have been collected in the way it was described.
+Sometimes the origin story may just be fishy: did such-and-such academic really interview 50 active gang members from the south side of Chicago? If the way the data were gathered seems questionable and your source can't offer you [ironcald provenance](#provenance-is-not-documented) then you should always verify with another expert that the data could reasonably have been collected in the way that was described.
 
 See also:
 
 * [Provenance is not documented](#provenance-is-not-documented)  
-* [Data asserts unrealistic precision](#data-asserts-unrealistic-precision)
-* [It's too good to be true](#its-too-good-to-be-true)
+* [Data assert unrealistic precision](#data-assert-unrealistic-precision)
+* [Too good to be true](#too-good-to-be-true)
 
-### Data asserts unrealistic precision
+### Data assert unrealistic precision
 
 Outside of hard science, few things are routinely measured with more than two decimal places of accuracy. If a dataset lands on your desk that purports to show a factory's emissions to the 7th decimal place that is a dead giveaway that it was estimated from other values. That in and of itself may not be a problem, but it's important to be transparent about estimates. They are often wrong.
 
@@ -403,19 +403,19 @@ See also:
 
 ### Benford's Law fails
 
-[Benford's Law](https://en.wikipedia.org/wiki/Benford's_law) is a theory which states that small digits (1, 2, 3) appear at the beginning of numbers much more frequently than large digits (7, 8, 9). In theory Benford's Law can be used to detect anomalies in accounting practices or election results, though in practice it can easily be misapplied. If you suspect a dataset has been created or modified to deceive, Benford's Law is an excellent first test, but you should always verify your results with an expert before concluding your data has been manipulated.
+[Benford's Law](https://en.wikipedia.org/wiki/Benford's_law) is a theory which states that small digits (1, 2, 3) appear at the beginning of numbers much more frequently than large digits (7, 8, 9). In theory Benford's Law can be used to detect anomalies in accounting practices or election results, though in practice it can easily be misapplied. If you suspect a dataset has been created or modified to deceive, Benford's Law is an excellent first test, but you should always verify your results with an expert before concluding your data have been manipulated.
 
-### It's too good to be true
+### Too good to be true
 
 There is no global dataset of public opinion. Nobody knows the exact number of people living in Siberia. Crime statistics aren't comparable across borders. The US government is not going to tell you how much fissile material it keeps on hand.
 
-Beware any data that purports to represent something that you could not possibly know. It's not data. It's somebody's estimate and it's probably wrong. Then again... it could be a story, so ask an expert to check it out.
+Beware any data that purport to represent something that you could not possibly know. It's not data. It's somebody's estimate and it's probably wrong. Then again... it could be a story, so ask an expert to check it out.
 
 ## Issues a programmer should help you solve
 
 ### Data are aggregated to the wrong categories or geographies
 
-Sometimes your data are at about the right level of detail (neither [too coarse](#data-are-too-coarse) nor [too granular](#data-are-too-granular)), but it has been aggregated to different grouping than you want. This classic example of this is data that is aggregated by zip codes that you would prefer to have by city neighborhoods. In many cases this is an impossible problem to solve without getting more granular data from your source, but sometimes the data can be proportionally mapped from one group to another. This must be undertaken only with careful understanding of the [margin-of-error](#margin-of-error-is-too-large) that may be introduced in the process. If you've got data aggregated to the wrong groups, ask a programmer if it is possible to re-aggregate it.
+Sometimes your data are at about the right level of detail (neither [too coarse](#data-are-too-coarse) nor [too granular](#data-are-too-granular)), but they have been aggregated to different grouping than you want. This classic example of this is data that are aggregated by zip codes that you would prefer to have by city neighborhoods. In many cases this is an impossible problem to solve without getting more granular data from your source, but sometimes the data can be proportionally mapped from one group to another. This must be undertaken only with careful understanding of the [margin-of-error](#margin-of-error-is-too-large) that may be introduced in the process. If you've got data aggregated to the wrong groups, ask a programmer if it is possible to re-aggregate it.
 
 See also:
 
