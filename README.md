@@ -237,7 +237,7 @@ Typically, this is easy to resolve by simply opening the file in any general-pur
 
 ### Data are in a PDF
 
-A tremendous amount of data—especially government data—are only available in PDF format. If you have real, textual data inside the PDF then there are several good options for extracting them. (If you've got [scanned documents](#data-are-in-scanned-documents) that's a different problem.) One excellent, free tool is [Tabula](#http://tabula.technology/). However, if you have Adobe Creative Cloud then also have access to Acrobat Pro, which has an excellent feature for exporting tables in PDFs to Excel. Either solution should be able to extract most tabular data from a PDF.
+A tremendous amount of data—especially government data—are only available in PDF format. If you have real, textual data inside the PDF then there are several good options for extracting them. (If you've got [scanned documents](#data-are-in-scanned-documents) that's a different problem.) One excellent, free tool is [Tabula](http://tabula.technology/). However, if you have Adobe Creative Cloud then also have access to Acrobat Pro, which has an excellent feature for exporting tables in PDFs to Excel. Either solution should be able to extract most tabular data from a PDF.
 
 See also:
 
