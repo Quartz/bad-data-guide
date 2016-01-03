@@ -338,7 +338,7 @@ See also:
 
 ### Timeframe has been manipulated
 
-A source can accidentally or intentionally misrepresent the world by giving you data that stops or starts at a specific time. For a potent example see 2015's widely reported "national crime wave". There was no crime wave. What there was a serious of spikes in particular cities when compared to just the last few years. Had journalists examined a wider timeframe they would have seen that violent crime was higher virtually everywhere in the US ten years before. And twenty years before it was nearly double.
+A source can accidentally or intentionally misrepresent the world by giving you data that stops or starts at a specific time. For a potent example see 2015's widely reported "national crime wave". There was no crime wave. What there was was a series of spikes in particular cities when compared to just the last few years. Had journalists examined a wider timeframe they would have seen that violent crime was higher virtually everywhere in the US ten years before. And twenty years before it was nearly double.
 
 If you have data that covers a limited timeframe try to avoid starting your calculations with the very first time period you have data for. If you start a few years (or months or days) into the data you can have confidence that you aren't making a comparison which would be invalidated by having a single additional data point.
 
