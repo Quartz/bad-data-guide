@@ -295,7 +295,7 @@ See also:
 
 ### Margin-of-error is unknown
 
-Sometimes the problem isn't that the margin of error is [too large](#margin-of-error-is-too-large), it's that nobody ever bothered to figure out what it was in the first place. This is one problem with unscientific polls. Without computing an MOE, it is impossible to know how accurate the results are. As a general rule, anytime you have data that are from a survey you should ask for what the MOE is. If the source can't tell you, those data probably aren't worth using for any serious analysis.
+Sometimes the problem isn't that the margin of error is [too large](#margin-of-error-is-too-large), it's that nobody ever bothered to figure out what it was in the first place. This is one problem with unscientific polls. Without computing a MOE, it is impossible to know how accurate the results are. As a general rule, anytime you have data that are from a survey you should ask for what the MOE is. If the source can't tell you, those data probably aren't worth using for any serious analysis.
 
 See also:
 
