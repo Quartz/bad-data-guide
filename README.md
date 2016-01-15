@@ -16,57 +16,57 @@ This work is licensed under a [Creative Commons Attribution-NonCommercial 4.0 In
 
 ## Issues that your source should solve
 
-* [Values are missing](#values-are-missing)      
-* [Zeros replace missing values](#zeros-replace-missing-values)      
-* [Data are missing you know should be there](#data-are-missing-you-know-should-be-there)      
-* [Rows or values are duplicated](#rows-or-values-are-duplicated)      
-* [Spelling is inconsistent](#spelling-is-inconsistent)      
-* [Name order is inconsistent](#name-order-is-inconsistent)      
-* [Date formats are inconsistent](#date-formats-are-inconsistent)      
-* [Units are not specified](#units-are-not-specified)      
-* [Categories are badly chosen](#categories-are-badly-chosen)      
-* [Field names are ambiguous](#field-names-are-ambiguous)      
-* [Provenance is not documented](#provenance-is-not-documented)   
-* [Suspicious values are present](#suspicious-values-are-present)      
-* [Data are too coarse](#data-are-too-coarse)          
+* [Values are missing](#values-are-missing)
+* [Zeros replace missing values](#zeros-replace-missing-values)
+* [Data are missing you know should be there](#data-are-missing-you-know-should-be-there)
+* [Rows or values are duplicated](#rows-or-values-are-duplicated)
+* [Spelling is inconsistent](#spelling-is-inconsistent)
+* [Name order is inconsistent](#name-order-is-inconsistent)
+* [Date formats are inconsistent](#date-formats-are-inconsistent)
+* [Units are not specified](#units-are-not-specified)
+* [Categories are badly chosen](#categories-are-badly-chosen)
+* [Field names are ambiguous](#field-names-are-ambiguous)
+* [Provenance is not documented](#provenance-is-not-documented)
+* [Suspicious values are present](#suspicious-values-are-present)
+* [Data are too coarse](#data-are-too-coarse)
 * [Totals differ from published aggregates](#totals-differ-from-published-aggregates)
-* [Spreadsheet has 65536 rows](#spreadsheet-has-65536-rows)      
-* [Spreadsheet has dates in 1900, 1904, 1969, or 1970](#spreadsheet-has-dates-in-1900-1904-1969-or-1970)      
+* [Spreadsheet has 65536 rows](#spreadsheet-has-65536-rows)
+* [Spreadsheet has dates in 1900, 1904, 1969, or 1970](#spreadsheet-has-dates-in-1900-1904-1969-or-1970)
 * [Text has been converted to numbers](#text-has-been-converted-to-numbers)
 
 ## Issues that you should solve
 
 * [Text is garbled](#text-is-garbled)
 * [Line endings are garbled](#line-endings-are-garbled)
-* [Data are in a PDF](#data-are-in-a-pdf)        
-* [Data are too granular](#data-are-too-granular)        
-* [Data were entered by humans](#data-were-entered-by-humans)  
+* [Data are in a PDF](#data-are-in-a-pdf)
+* [Data are too granular](#data-are-too-granular)
+* [Data were entered by humans](#data-were-entered-by-humans)
 * [Data are intermingled with formatting and annotations](#data-are-intermingled-with-formatting-and-annotations)
-* [Aggregations were computed on missing values](#aggregations-were-computed-on-missing-values)      
-* [Sample is not random](#sample-is-not-random)      
-* [Margin-of-error is too large](#margin-of-error-is-too-large)      
+* [Aggregations were computed on missing values](#aggregations-were-computed-on-missing-values)
+* [Sample is not random](#sample-is-not-random)
+* [Margin-of-error is too large](#margin-of-error-is-too-large)
 * [Margin-of-error is unknown](#margin-of-error-is-unknown)
-* [Sample is biased](#sample-is-biased)      
-* [Data have been manually edited](#data-have-been-manually-edited)      
-* [Inflation skews the data](#inflation-skews-the-data)      
+* [Sample is biased](#sample-is-biased)
+* [Data have been manually edited](#data-have-been-manually-edited)
+* [Inflation skews the data](#inflation-skews-the-data)
 * [Natural/seasonal variation skews the data](#naturalseasonal-variation-skews-the-data)
-* [Timeframe has been manipulated](#timeframe-has-been-manipulated)      
-* [Frame of reference has been manipulated](#frame-of-reference-has-been-manipulated)     
+* [Timeframe has been manipulated](#timeframe-has-been-manipulated)
+* [Frame of reference has been manipulated](#frame-of-reference-has-been-manipulated)
 
 ## Issues a third-party expert should help you solve
 
-* [Author is untrustworthy](#author-is-untrustworthy)   
-* [Collection process is opaque](#collection-process-is-opaque)      
-* [Data assert unrealistic precision](#data-assert-unrealistic-precision)  
+* [Author is untrustworthy](#author-is-untrustworthy)
+* [Collection process is opaque](#collection-process-is-opaque)
+* [Data assert unrealistic precision](#data-assert-unrealistic-precision)
 * [There are inexplicable outliers](#there-are-inexplicable-outliers)
-* [An index masks underlying variation](#an-index-masks-underlying-variation)       
-* [Results have been p-hacked](#results-have-been-p-hacked)        
-* [Benford's Law fails](#benfords-law-fails)  
-* [Too good to be true](#too-good-to-be-true)       
+* [An index masks underlying variation](#an-index-masks-underlying-variation)
+* [Results have been p-hacked](#results-have-been-p-hacked)
+* [Benford's Law fails](#benfords-law-fails)
+* [Too good to be true](#too-good-to-be-true)
 
 ## Issues a programmer should help you solve
 
-* [Data are aggregated to the wrong categories or geographies](#data-are-aggregated-to-the-wrong-categories-or-geographies)        
+* [Data are aggregated to the wrong categories or geographies](#data-are-aggregated-to-the-wrong-categories-or-geographies)
 * [Data are in scanned documents](#data-are-in-scanned-documents)
 
 # Detailed list of all problems
@@ -88,7 +88,7 @@ The same caution should be exercised for other non-numerical values where a `0` 
 See also:
 
 * [Suspicious values are present](#suspicious-values-are-present)
-* [Spreadsheet has dates in 1900, 1904, 1969, or 1970](#spreadsheet-has-dates-in-1900-1904-1969-or-1970)   
+* [Spreadsheet has dates in 1900, 1904, 1969, or 1970](#spreadsheet-has-dates-in-1900-1904-1969-or-1970)
 
 ### Data are missing you know should be there
 
@@ -106,13 +106,13 @@ Spelling is one of the most obvious ways of telling if data have been compiled b
 
 See also:
 
-* [Data were entered by humans](#data-were-entered-by-humans)    
+* [Data were entered by humans](#data-were-entered-by-humans)
 
 ### Name order is inconsistent
 
 Does your data have Middle Eastern or East Asian names in it? Are you sure the surnames are always in the same place? Is it possible anyone in your dataset [uses a mononym](https://en.wikipedia.org/wiki/Indonesian_names#Indonesian_naming_system)? These are the sorts of things that data makers habitually get wrong. If you're working with a list of ethnically diverse names—which is any list of names—then you should do at least a cursory review before assuming that joining the `first_name` and `last_name` columns will give you something that is appropriate to publish.
 
-* [Data were entered by humans](#data-were-entered-by-humans)  
+* [Data were entered by humans](#data-were-entered-by-humans)
 
 ### Date formats are inconsistent
 
@@ -124,7 +124,7 @@ Which date is in September:
 If the first one was written by a European and the second one by an American [then they both are](https://en.wikipedia.org/wiki/Date_format_by_country). Without knowing the history of the data you can't know for sure. Know where your data came from and be sure that it was all created by folks from the same continent.
 
 * [Data were entered by humans](#data-were-entered-by-humans)
-* [Provenance is not documented](#provenance-is-not-documented)   
+* [Provenance is not documented](#provenance-is-not-documented)
 
 ### Units are not specified
 
@@ -185,8 +185,8 @@ Each of these numbers has an indication of a particular error made by either a h
 
 See also:
 
-* [Spreadsheet has 65536 rows](#spreadsheet-has-65536-rows)      
-* [Spreadsheet has dates in 1900 or 1904](#spreadsheet-has-dates-in-1900-or-1904)  
+* [Spreadsheet has 65536 rows](#spreadsheet-has-65536-rows)
+* [Spreadsheet has dates in 1900 or 1904](#spreadsheet-has-dates-in-1900-or-1904)
 
 ### Data are too coarse
 
@@ -223,7 +223,7 @@ Not all numerals are numbers. For instance, the US Census Bureau uses "FIPS code
 
 ## Issues that you should solve
 
-### Text is garbled     
+### Text is garbled
 
 All letters are represented by computers as numbers. Encoding problems are issues that arise when text is represented by a specific set of numbers (called an "encoding") and you don't know what it is. This leads to a phenomenon called [mojibake](https://en.wikipedia.org/wiki/Mojibake) where the text in your data looks like garbage, or like this: ���.
 
@@ -272,8 +272,8 @@ This is an error you can make in your analysis, but it's also an error that othe
 
 See also:
 
-* [Values are missing](#values-are-missing)      
-* [Zeros replace missing values](#zeros-replace-missing-values)   
+* [Values are missing](#values-are-missing)
+* [Zeros replace missing values](#zeros-replace-missing-values)
 
 ### Sample is not random
 
@@ -281,7 +281,7 @@ A non-random sampling error occurs when a survey or other sampled dataset either
 
 See also:
 
-* [Sample is biased](#sample-is-biased)    
+* [Sample is biased](#sample-is-biased)
 
 ### Margin-of-error is too large
 
@@ -299,7 +299,7 @@ Sometimes the problem isn't that the margin of error is [too large](#margin-of-e
 
 See also:
 
-* [Margin-of-error is too large](#margin-of-error-is-too-large)  
+* [Margin-of-error is too large](#margin-of-error-is-too-large)
 
 ### Sample is biased
 
@@ -356,7 +356,7 @@ This problem tends to crop up in subjects where people have a strong confirmatio
 
 See also:
 
-* [Timeframe has been manipulated](#timeframe-has-been-manipulated)  
+* [Timeframe has been manipulated](#timeframe-has-been-manipulated)
 
 ## Issues a third-party expert should help you solve
 
@@ -372,7 +372,7 @@ Sometimes the origin story may just be fishy: did such-and-such academic really 
 
 See also:
 
-* [Provenance is not documented](#provenance-is-not-documented)  
+* [Provenance is not documented](#provenance-is-not-documented)
 * [Data assert unrealistic precision](#data-assert-unrealistic-precision)
 * [Too good to be true](#too-good-to-be-true)
 
@@ -402,7 +402,7 @@ If you're going to publish the results of a study you need to understand what th
 
 See also:
 
-* [Margin-of-error is too large](#margin-of-error-is-too-large)  
+* [Margin-of-error is too large](#margin-of-error-is-too-large)
 
 ### Benford's Law fails
 
