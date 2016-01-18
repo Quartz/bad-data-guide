@@ -186,7 +186,7 @@ Each of these numbers has an indication of a particular error made by either a h
 See also:
 
 * [Spreadsheet has 65536 rows](#spreadsheet-has-65536-rows)
-* [Spreadsheet has dates in 1900 or 1904](#spreadsheet-has-dates-in-1900-or-1904)
+* [Spreadsheet has dates in 1900, 1904, 1969, or 1970](#spreadsheet-has-dates-in-1900-1904-1969-or-1970)
 
 ### Data are too coarse
 
