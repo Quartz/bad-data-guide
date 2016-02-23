@@ -33,6 +33,7 @@ This work is licensed under a [Creative Commons Attribution-NonCommercial 4.0 In
 * [Spreadsheet has 65536 rows](#spreadsheet-has-65536-rows)
 * [Spreadsheet has dates in 1900, 1904, 1969, or 1970](#spreadsheet-has-dates-in-1900-1904-1969-or-1970)
 * [Text has been converted to numbers](#text-has-been-converted-to-numbers)
+* [Numbers have been converted to text](#numbers-have-been-converted-to-text)
 
 ## Issues that you should solve
 
@@ -220,6 +221,10 @@ Many databases and applications will often generate a date of `1970-01-01T00:00:
 ### Text has been converted to numbers
 
 Not all numerals are numbers. For instance, the US Census Bureau uses "FIPS codes" to identify every place in the United States. These codes are of various lengths and are numeric. However, they are *not* numbers. `037` is the FIPS code for Los Angeles County. It is not the number `37`. The numerals `37` are, however, a valid FIPS code: for North Carolina. Excel and other spreadsheets will often make the mistake of assuming numerals are numbers and stripping the leading zeros. This can cause all kinds of problems if you try to convert it to another file format or merge it with another dataset. Watch out for data where this has happened before it was given to you.
+
+### Numbers have been stored as text
+
+When working with spreadsheets, numbers may be stored as text with unwanted formatting. This often happens when a spreadsheet is optimized fori presenting data rather than making it available for re-use. For example, instead of representing a million dollars with the number "1000000" a cell might contain the string "1,000,000" or "1 000 000" or "USD 1,000,000" with the formatting of commas, units and spaces entered as characters. Excel can take care of some simple cases with built-in functions but you'll often  need to use formulas to strip out characters until cells are clean enough to be recognized as numbers. Good practice is to store numbers without formatting and to include supporting information in column names or metadata.
 
 ## Issues that you should solve
 
