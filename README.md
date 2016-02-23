@@ -33,7 +33,7 @@ This work is licensed under a [Creative Commons Attribution-NonCommercial 4.0 In
 * [Spreadsheet has 65536 rows](#spreadsheet-has-65536-rows)
 * [Spreadsheet has dates in 1900, 1904, 1969, or 1970](#spreadsheet-has-dates-in-1900-1904-1969-or-1970)
 * [Text has been converted to numbers](#text-has-been-converted-to-numbers)
-* [Numbers have been converted to text](#numbers-have-been-converted-to-text)
+* [Numbers have been stored as text](#numbers-have-been-stored-as-text)
 
 ## Issues that you should solve
 
