@@ -224,7 +224,7 @@ Not all numerals are numbers. For instance, the US Census Bureau uses "FIPS code
 
 ### Numbers have been stored as text
 
-When working with spreadsheets, numbers may be stored as text with unwanted formatting. This often happens when a spreadsheet is optimized fori presenting data rather than making it available for re-use. For example, instead of representing a million dollars with the number "1000000" a cell might contain the string "1,000,000" or "1 000 000" or "USD 1,000,000" with the formatting of commas, units and spaces entered as characters. Excel can take care of some simple cases with built-in functions but you'll often  need to use formulas to strip out characters until cells are clean enough to be recognized as numbers. Good practice is to store numbers without formatting and to include supporting information in column names or metadata.
+When working with spreadsheets, numbers may be stored as text with unwanted formatting. This often happens when a spreadsheet is optimized for presenting data rather than making it available for re-use. For example, instead of representing a million dollars with the number "1000000" a cell might contain the string "1,000,000" or "1 000 000" or "USD 1,000,000" with the formatting of commas, units and spaces entered as characters. Excel can take care of some simple cases with built-in functions, but you'll often need to use formulas to strip out characters until cells are clean enough to be recognized as numbers. Good practice is to store numbers without formatting and to include supporting information in column names or metadata.
 
 ## Issues that you should solve
 
