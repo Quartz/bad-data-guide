@@ -38,6 +38,7 @@ Want to translate this guide into your language? Go ahead! Email [Chris](mailto:
 * [Data are too coarse](#data-are-too-coarse)
 * [Totals differ from published aggregates](#totals-differ-from-published-aggregates)
 * [Spreadsheet has 65536 rows](#spreadsheet-has-65536-rows)
+* [Spreadsheet has 255 columns](#spreadsheet-has-255-columns)
 * [Spreadsheet has dates in 1900, 1904, 1969, or 1970](#spreadsheet-has-dates-in-1900-1904-1969-or-1970)
 * [Text has been converted to numbers](#text-has-been-converted-to-numbers)
 * [Numbers have been stored as text](#numbers-have-been-stored-as-text)
@@ -170,6 +171,7 @@ If you see any of these values in your data, treat them with an abundance of cau
 Numbers:
 
 * [`65,535`](https://en.wikipedia.org/wiki/65535_%28number%29)
+* [`255`](https://en.wikipedia.org/wiki/255_%28number%29)
 * [`2,147,483,647`](https://en.wikipedia.org/wiki/2147483647_%28number%29)
 * [`4,294,967,295`](https://en.wikipedia.org/wiki/4294967295)
 * [`555-3485`](https://en.wikipedia.org/wiki/555_%28telephone_number%29)
@@ -194,7 +196,8 @@ Each of these numbers has an indication of a particular error made by either a h
 See also:
 
 * [Spreadsheet has 65536 rows](#spreadsheet-has-65536-rows)
-* [Spreadsheet has dates in 1900, 1904, 1969, or 1970](#spreadsheet-has-dates-in-1900-1904-1969-or-1970)
+* [Spreadsheet has 255 columns](#spreadsheet-has-255-columns)
+* [Spreadsheet has dates in 1900 or 1904](#spreadsheet-has-dates-in-1900-or-1904)
 
 ### Data are too coarse
 
@@ -218,6 +221,10 @@ These sorts of discrepancies between published statistics and raw data can be a 
 ### Spreadsheet has 65536 rows
 
 The maximum number of rows an old-fashioned Excel spreadsheet was allowed to have was 65,536. If you receive a dataset with that number of rows you have almost certainly been given truncated data. Go back and ask for the rest. Newer versions of Excel allowed for 1,048,576 rows, so it's less likely you'll be working with data that hits the limit.
+
+### Spreadsheet has 255 columns
+
+Apple's Numbers app can only handle spreadsheets with 255 columns, and the app will truncate files that have more columns without warning the user. If you receive a dataset with exactly 255 columns, ask if the file was ever opened or converted with Numbers.
 
 ### Spreadsheet has dates in 1900, 1904, 1969, or 1970
 
