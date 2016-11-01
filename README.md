@@ -38,6 +38,7 @@ Want to translate this guide into your language? Go ahead! Email [Chris](mailto:
 * [Data are too coarse](#data-are-too-coarse)
 * [Totals differ from published aggregates](#totals-differ-from-published-aggregates)
 * [Spreadsheet has 65536 rows](#spreadsheet-has-65536-rows)
+* [Spreadsheet has 255 columns](#spreadsheet-has-255-columns)
 * [Spreadsheet has dates in 1900, 1904, 1969, or 1970](#spreadsheet-has-dates-in-1900-1904-1969-or-1970)
 * [Text has been converted to numbers](#text-has-been-converted-to-numbers)
 * [Numbers have been stored as text](#numbers-have-been-stored-as-text)
@@ -89,7 +90,7 @@ Any time you're working with data that has missing values you should ask yoursel
 
 ### Zeros replace missing values
 
-Worse than a missing value is when an arbitrary value is used instead. This can be the result of a human not thinking through the implications or it can happen as the result of automated processes that simply don't know how to handle null values. In any case, if you see zeros in a series of numbers you should ask yourself if those values are really the number `0` or if they instead means "nothing". (`-1` is also sometimes used this way.) If you aren't sure, ask your source.
+Worse than a missing value is when an arbitrary value is used instead. This can be the result of a human not thinking through the implications or it can happen as the result of automated processes that simply don't know how to handle null values. In any case, if you see zeros in a series of numbers you should ask yourself if those values are really the number `0` or if they instead mean "nothing". (`-1` is also sometimes used this way.) If you aren't sure, ask your source.
 
 The same caution should be exercised for other non-numerical values where a `0` may be represented in another way. For example a false `0` value for a date is often displayed as `1970-01-01T00:00:00Z` or `1969-12-31T24:59:59Z` which is the [Unix epoch for timestamps](https://en.wikipedia.org/wiki/Unix_time#Encoding_time_as_a_number). A false `0` for a location might be represented as `0°00'00.0"N+0°00'00.0"E` or simply `0°N 0°E` which is a point in the Atlantic Ocean just south of Ghana often referred to as [Null Island](https://en.wikipedia.org/wiki/Null_Island).
 
@@ -100,7 +101,7 @@ See also:
 
 ### Data are missing you know should be there
 
-Sometimes data are missing and you can't tell from the dataset itself, but you can still know because you know what the data purports to be about. If you have a dataset covering the United States then you can check to ensure all 50 states represented. (And don't forget about [the territories](https://en.wikipedia.org/wiki/Territories_of_the_United_States)—50 isn't the right number if the dataset includes Puerto Rico.) If you're dealing with a dataset of baseball players make sure it has the number of teams you expect. Verify that a few players who you know are included. Trust your intuition if something seems to missing and double-check with your source. The universe of your data might be smaller than you think.
+Sometimes data are missing and you can't tell from the dataset itself, but you can still know because you know what the data purports to be about. If you have a dataset covering the United States then you can check to ensure all 50 states are represented. (And don't forget about [the territories](https://en.wikipedia.org/wiki/Territories_of_the_United_States)—50 isn't the right number if the dataset includes Puerto Rico.) If you're dealing with a dataset of baseball players make sure it has the number of teams you expect. Verify that a few players who you know are included. Trust your intuition if something seems to be missing and double-check with your source. The universe of your data might be smaller than you think.
 
 ### Rows or values are duplicated
 
@@ -151,7 +152,7 @@ Bad categories can also artificially exclude data. This frequently happens with 
 
 ### Field names are ambiguous
 
-What is a `residence`? Is it where someone lives or where they pay taxes? Is it it a city or a county? Field names in data are never as specific as we would like, but particular concern should be applied to those that could obviously mean two or more things. Even if you correctly infer what the values are supposed to mean, that ambiguity could have easily caused the person collecting the data to enter the wrong value.
+What is a `residence`? Is it where someone lives or where they pay taxes? Is it a city or a county? Field names in data are never as specific as we would like, but particular concern should be applied to those that could obviously mean two or more things. Even if you correctly infer what the values are supposed to mean, that ambiguity could have easily caused the person collecting the data to enter the wrong value.
 
 ### Provenance is not documented
 
@@ -170,6 +171,7 @@ If you see any of these values in your data, treat them with an abundance of cau
 Numbers:
 
 * [`65,535`](https://en.wikipedia.org/wiki/65535_%28number%29)
+* [`255`](https://en.wikipedia.org/wiki/255_%28number%29)
 * [`2,147,483,647`](https://en.wikipedia.org/wiki/2147483647_%28number%29)
 * [`4,294,967,295`](https://en.wikipedia.org/wiki/4294967295)
 * [`555-3485`](https://en.wikipedia.org/wiki/555_%28telephone_number%29)
@@ -194,7 +196,8 @@ Each of these numbers has an indication of a particular error made by either a h
 See also:
 
 * [Spreadsheet has 65536 rows](#spreadsheet-has-65536-rows)
-* [Spreadsheet has dates in 1900, 1904, 1969, or 1970](#spreadsheet-has-dates-in-1900-1904-1969-or-1970)
+* [Spreadsheet has 255 columns](#spreadsheet-has-255-columns)
+* [Spreadsheet has dates in 1900 or 1904](#spreadsheet-has-dates-in-1900-or-1904)
 
 ### Data are too coarse
 
@@ -219,11 +222,15 @@ These sorts of discrepancies between published statistics and raw data can be a 
 
 The maximum number of rows an old-fashioned Excel spreadsheet was allowed to have was 65,536. If you receive a dataset with that number of rows you have almost certainly been given truncated data. Go back and ask for the rest. Newer versions of Excel allowed for 1,048,576 rows, so it's less likely you'll be working with data that hits the limit.
 
+### Spreadsheet has 255 columns
+
+Apple's Numbers app can only handle spreadsheets with 255 columns, and the app will truncate files that have more columns without warning the user. If you receive a dataset with exactly 255 columns, ask if the file was ever opened or converted with Numbers.
+
 ### Spreadsheet has dates in 1900, 1904, 1969, or 1970
 
 For reasons beyond obscure, Excel's default date from which it counts all other dates is `January 1st, 1900`, *unless* you're using Excel on a Mac, in which case it's `January 1st, 1904`. There are a variety of ways in which data in Excel can be entered or calculated incorrectly and end up as one of these two dates. If you spot them in your data, it's probably an issue.
 
-Many databases and applications will often generate a date of `1970-01-01T00:00:00Z` or `1969-12-31T24:59:59Z` which is the [Unix epoch for timestamps](https://en.wikipedia.org/wiki/Unix_time#Encoding_time_as_a_number). In other words this is what happens when a system tries to display an empty value or a `0` value as a date.
+Many databases and applications will often generate a date of `1970-01-01T00:00:00Z` or `1969-12-31T23:59:59Z` which is the [Unix epoch for timestamps](https://en.wikipedia.org/wiki/Unix_time#Encoding_time_as_a_number). In other words this is what happens when a system tries to display an empty value or a `0` value as a date.
 
 ### Text has been converted to numbers
 
@@ -239,7 +246,7 @@ When working with spreadsheets, numbers may be stored as text with unwanted form
 
 All letters are represented by computers as numbers. Encoding problems are issues that arise when text is represented by a specific set of numbers (called an "encoding") and you don't know what it is. This leads to a phenomenon called [mojibake](https://en.wikipedia.org/wiki/Mojibake) where the text in your data looks like garbage, or like this: ���.
 
-In the vast majority of cases your text editor or spreadsheet application will figure out the correct encoding, however, if it screws it up you could publishing somebody's name with a weird character in the middle. Your source should be able to tell you what encoding your data are in. In the event they can't there are ways of guessing that are about fairly reliable. Ask a programmer.
+In the vast majority of cases your text editor or spreadsheet application will figure out the correct encoding, however, if it screws it up you could be publishing somebody's name with a weird character in the middle. Your source should be able to tell you what encoding your data are in. In the event they can't there are ways of guessing that are about fairly reliable. Ask a programmer.
 
 ### Line endings are garbled
 
@@ -249,7 +256,7 @@ Typically, this is easy to resolve by simply opening the file in any general-pur
 
 ### Data are in a PDF
 
-A tremendous amount of data—especially government data—are only available in PDF format. If you have real, textual data inside the PDF then there are several good options for extracting them. (If you've got [scanned documents](#data-are-in-scanned-documents) that's a different problem.) One excellent, free tool is [Tabula](http://tabula.technology/). However, if you have Adobe Creative Cloud then also have access to Acrobat Pro, which has an excellent feature for exporting tables in PDFs to Excel. Either solution should be able to extract most tabular data from a PDF.
+A tremendous amount of data—especially government data—are only available in PDF format. If you have real, textual data inside the PDF then there are several good options for extracting them. (If you've got [scanned documents](#data-are-in-scanned-documents) that's a different problem.) One excellent, free tool is [Tabula](http://tabula.technology/). However, if you have Adobe Creative Cloud then you also have access to Acrobat Pro, which has an excellent feature for exporting tables in PDFs to Excel. Either solution should be able to extract most tabular data from a PDF.
 
 See also:
 
@@ -297,7 +304,7 @@ See also:
 
 ### Margin-of-error is too large
 
-I know of no other single issue that causes more reporting errors than the unreflective usage of numbers with very large margins-of-error. MOE is usually associated with survey data. The most likely place a reporter encounters it is when using polling data or the US Census Bureau's [American Community Survey](https://www.census.gov/programs-surveys/acs/) data. The MOE is a measure of the range of possible true values. It may be expressed as a number (`400 +/- 80`) or as a percentage of the whole (`400 +/- 20%`). The smaller the relevant population, the larger the MOE will be. For example, according to the 2014 5-year ACS estimates, the number of Asians living in New York is `1,106,989 +/- 3,526` (0.3%). The number of Filipinos is `71,969 +/- 3,088` (4.3%). The number of Samoans is `203 +/- 144`. (71%)
+I know of no other single issue that causes more reporting errors than the unreflective usage of numbers with very large margins-of-error. MOE is usually associated with survey data. The most likely place a reporter encounters it is when using polling data or the US Census Bureau's [American Community Survey](https://www.census.gov/programs-surveys/acs/) data. The MOE is a measure of the range of possible true values. It may be expressed as a number (`400 +/- 80`) or as a percentage of the whole (`400 +/- 20%`). The smaller the relevant population, the larger the MOE will be. For example, according to the 2014 5-year ACS estimates, the number of Asians living in New York is `1,106,989 +/- 3,526` (0.3%). The number of Filipinos is `71,969 +/- 3,088` (4.3%). The number of Samoans is `203 +/- 144` (71%).
 
 The first two numbers are safe to report. The third number should never be used in published reporting. There is no one rule about when a number is not accurate enough to use, but as a rule of thumb, you should be cautious about using any number with a MOE over 10%.
 
@@ -323,7 +330,7 @@ See also:
 
 ### Data have been manually edited
 
-Manual editing is almost the same as problem as [data being entered by humans](#data-were-entered-by-humans) except that it happens after the fact. In fact, data are often manually edited in an attempt to fix data that were originally entered by humans. Problems start to creep in when the person doing the editing doesn't have complete knowledge of the original data. I once saw someone spontaneously "correct" a name in a dataset from `Smit` to `Smith`. Was that person's name really `Smith`? I don't know, but I do know that value is now a problem. Without a record of that change, it's impossible to verify what it should be.
+Manual editing is almost the same problem as [data being entered by humans](#data-were-entered-by-humans) except that it happens after the fact. In fact, data are often manually edited in an attempt to fix data that were originally entered by humans. Problems start to creep in when the person doing the editing doesn't have complete knowledge of the original data. I once saw someone spontaneously "correct" a name in a dataset from `Smit` to `Smith`. Was that person's name really `Smith`? I don't know, but I do know that value is now a problem. Without a record of that change, it's impossible to verify what it should be.
 
 Issues with manual editing are one reason why you always want to ensure your data have [well-documented provenance](#provenance-is-not-documented). A lack of provenance can be a good indication that someone may have monkeyed with it. Academics and policy analysts often get data from the government, monkey with them and then redistribute them to journalists. Without any record of their changes it's impossible to know if the changes they made were justified. Whenever feasible always try to get the *primary source* or at least the earliest version you can and then do your own analysis from that.
 
@@ -360,7 +367,7 @@ See also:
 
 ### Frame of reference has been manipulated
 
-Crime statistics are often manipulated for political purposes by comparing to a year when crime was very high. This can expressed either as a change (down `60%` since 2004) or via an index (`40`, where 2004 = 100). In either of these cases, 2004 may or may not be an appropriate year for comparison. It could have been an unusually high crime year.
+Crime statistics are often manipulated for political purposes by comparing to a year when crime was very high. This can be expressed either as a change (down `60%` since 2004) or via an index (`40`, where 2004 = 100). In either of these cases, 2004 may or may not be an appropriate year for comparison. It could have been an unusually high crime year.
 
 This also happens when comparing places. If I want to make one country look bad, I simply express the data about it relative to whichever country is doing the best.
 
@@ -380,7 +387,7 @@ Sometimes the only data you have are from a source you would rather not rely on.
 
 It's very easy for false assumptions, errors or outright falsehoods to be introduced into these data collection processes. For this reason it's important that methods used be transparent. It's rare that you'll know exactly how a dataset was gathered, but indications of a problem can include numbers that [assert unrealistic precision](#data-asserts-unrealistic-precision) and data that [are too good to be true](#too-good-to-be-true).
 
-Sometimes the origin story may just be fishy: did such-and-such academic really interview 50 active gang members from the south side of Chicago? If the way the data were gathered seems questionable and your source can't offer you [ironcald provenance](#provenance-is-not-documented) then you should always verify with another expert that the data could reasonably have been collected in the way that was described.
+Sometimes the origin story may just be fishy: did such-and-such academic really interview 50 active gang members from the south side of Chicago? If the way the data were gathered seems questionable and your source can't offer you [ironclad provenance](#provenance-is-not-documented) then you should always verify with another expert that the data could reasonably have been collected in the way that was described.
 
 See also:
 
@@ -404,11 +411,11 @@ As a side-benefit of doing this work, outliers are often a great way to find sto
 
 Analysts who want to follow the trend of an issue often create indices of various values to track progress. There is nothing intrinsically wrong with using an index. They can have great explanatory power. However, it's important to be cautious of indices that combine disparate measures.
 
-For example, the United Nations [Gender Inequality Index](p.org/en/content/gender-inequality-index-gii) combines several measures related to women's progress toward equality. One of the measures used in the GII is "representation of women in parliament". Two countries in the world have laws mandating gender representation in their parliaments: China and Pakistan. As a result these two countries perform far better in the index than countries that are similar in all other ways. Is this fair? It doesn't really matter, because it is confusing to anyone who doesn't know about this factor. The GII and similar indices should always be used with careful analysis to ensure their underlying variables don't swing the index in unexpected ways.
+For example, the United Nations [Gender Inequality Index](http://hdr.undp.org/en/content/gender-inequality-index-gii) combines several measures related to women's progress toward equality. One of the measures used in the GII is "representation of women in parliament". Two countries in the world have laws mandating gender representation in their parliaments: China and Pakistan. As a result these two countries perform far better in the index than countries that are similar in all other ways. Is this fair? It doesn't really matter, because it is confusing to anyone who doesn't know about this factor. The GII and similar indices should always be used with careful analysis to ensure their underlying variables don't swing the index in unexpected ways.
 
 ### Results have been p-hacked
 
-P-hacking is intentionally altering the data, changing the statistical analysis, or selectively reporting results in order to have statistically significant findings. Examples of this include: stop collecting data once you have a significant results, remove observations to get a significant result, or perform many analyses and only report the few that are significant. There has been some [good reporting](http://fivethirtyeight.com/features/science-isnt-broken) on this problem.
+P-hacking is intentionally altering the data, changing the statistical analysis, or selectively reporting results in order to have statistically significant findings. Examples of this include: stop collecting data once you have a significant result, remove observations to get a significant result, or perform many analyses and only report the few that are significant. There has been some [good reporting](http://fivethirtyeight.com/features/science-isnt-broken) on this problem.
 
 If you're going to publish the results of a study you need to understand what the p-value is, what that means and then make an educated decision about whether the results are worth using. Lots and lots of garbage study results make it into major publications because journalists don't understand p-values.
 
@@ -424,13 +431,13 @@ See also:
 
 There is no global dataset of public opinion. Nobody knows the exact number of people living in Siberia. Crime statistics aren't comparable across borders. The US government is not going to tell you how much fissile material it keeps on hand.
 
-Beware any data that purport to represent something that you could not possibly know. It's not data. It's somebody's estimate and it's probably wrong. Then again... it could be a story, so ask an expert to check it out.
+Beware any data that purport to represent something that you could not possibly know. It's not data. It's somebody's estimate and it's probably wrong. Then again...it could be a story, so ask an expert to check it out.
 
 ## Issues a programmer should help you solve
 
 ### Data are aggregated to the wrong categories or geographies
 
-Sometimes your data are at about the right level of detail (neither [too coarse](#data-are-too-coarse) nor [too granular](#data-are-too-granular)), but they have been aggregated to different grouping than you want. This classic example of this is data that are aggregated by zip codes that you would prefer to have by city neighborhoods. In many cases this is an impossible problem to solve without getting more granular data from your source, but sometimes the data can be proportionally mapped from one group to another. This must be undertaken only with careful understanding of the [margin-of-error](#margin-of-error-is-too-large) that may be introduced in the process. If you've got data aggregated to the wrong groups, ask a programmer if it is possible to re-aggregate it.
+Sometimes your data are at about the right level of detail (neither [too coarse](#data-are-too-coarse) nor [too granular](#data-are-too-granular)), but they have been aggregated to a different grouping than you want. The classic example of this is data that are aggregated by zip codes that you would prefer to have by city neighborhoods. In many cases this is an impossible problem to solve without getting more granular data from your source, but sometimes the data can be proportionally mapped from one group to another. This must be undertaken only with careful understanding of the [margin-of-error](#margin-of-error-is-too-large) that may be introduced in the process. If you've got data aggregated to the wrong groups, ask a programmer if it is possible to re-aggregate it.
 
 See also:
 
