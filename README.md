@@ -14,7 +14,7 @@ This work is licensed under a [Creative Commons Attribution-NonCommercial 4.0 In
 
 # Translations
 
-* [Chinese](https://docs.google.com/a/qz.com/forms/d/e/1FAIpQLSdb-RvuTKcWXlSRIwU0A0TVqYuJTGqDF3aGSkPUqHR2lTXp2w/viewform) (complete)
+* [Chinese](http://djchina.org/2016/07/12/bad_data_guide/) (complete)
 * [Chinese](http://cn.gijn.org/2016/01/10/quartz%E5%9D%8F%E6%95%B0%E6%8D%AE%E6%8C%87%E5%8D%97%E7%B2%BE%E9%80%89%EF%BC%9A%E5%A4%84%E7%90%86%E6%95%B0%E6%8D%AE%E7%9A%84%E6%AD%A3%E7%A1%AE%E6%96%B9%E5%BC%8F%E4%B8%80%E8%A7%88/) (partial)
 * [Portuguese](http://escoladedados.org/2016/09/08/guia-quartz-para-limpeza-de-dados/)
 * [Spanish](http://es.schoolofdata.org/guia-quartz/)
