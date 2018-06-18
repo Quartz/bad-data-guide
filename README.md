@@ -8,7 +8,7 @@ Most of these problems can be solved. Some of them can't be solved and that mean
 
 You cannot possibly review every dataset you encounter for all of these problems. If you try to do that you will never get anything published. However, by familiarizing yourself with the kinds of issues you are likely to encounter you will have a better chance of identifying an issue before it causes you to make a mistake.
 
-If you have questions about this guide please email [Chris](mailto:c@qz.com). Good luck!
+If you have questions about this guide please email [Chris](mailto:chrisgroskopf@gmail.com). Good luck!
 
 This work is licensed under a [Creative Commons Attribution-NonCommercial 4.0 International License](http://creativecommons.org/licenses/by-nc/4.0/). Send your pull requests!
 
@@ -20,7 +20,7 @@ This work is licensed under a [Creative Commons Attribution-NonCommercial 4.0 In
 * [Portuguese](http://escoladedados.org/2016/09/08/guia-quartz-para-limpeza-de-dados/)
 * [Spanish](http://es.schoolofdata.org/guia-quartz/)
 
-Want to translate this guide into your language? Go ahead! Email [Chris](mailto:c@qz.com) to have your translation added here.
+Want to translate this guide into your language? Go ahead! Email [Chris](mailto:chrisgroskopf@gmail.com) to have your translation added here.
 
 # Index
 
