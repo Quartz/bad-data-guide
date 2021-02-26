@@ -95,7 +95,7 @@ Any time you're working with data that has missing values you should ask yoursel
 
 Worse than a missing value is when an arbitrary value is used instead. This can be the result of a human not thinking through the implications or it can happen as the result of automated processes that simply don't know how to handle null values. In any case, if you see zeros in a series of numbers you should ask yourself if those values are really the number `0` or if they instead mean "nothing". (`-1` is also sometimes used this way.) If you aren't sure, ask your source.
 
-The same caution should be exercised for other non-numerical values where a `0` may be represented in another way. For example a false `0` value for a date is often displayed as `1970-01-01T00:00:00Z` or `1969-12-31T24:59:59Z` which is the [Unix epoch for timestamps](https://en.wikipedia.org/wiki/Unix_time#Encoding_time_as_a_number). A false `0` for a location might be represented as `0°00'00.0"N+0°00'00.0"E` or simply `0°N 0°E` which is a point in the Atlantic Ocean just south of Ghana often referred to as [Null Island](https://en.wikipedia.org/wiki/Null_Island).
+The same caution should be exercised for other non-numerical values where a `0` may be represented in another way. For example a false `0` value for a date is often displayed as `1970-01-01T00:00:00Z` or `1969-12-31T23:59:59Z` which is the [Unix epoch for timestamps](https://en.wikipedia.org/wiki/Unix_time#Encoding_time_as_a_number). A false `0` for a location might be represented as `0°00'00.0"N+0°00'00.0"E` or simply `0°N 0°E` which is a point in the Atlantic Ocean just south of Ghana often referred to as [Null Island](https://en.wikipedia.org/wiki/Null_Island).
 
 See also:
 
