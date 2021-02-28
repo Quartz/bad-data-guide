@@ -33,7 +33,9 @@ Want to translate this guide into your language? Go ahead! Email [Chris](mailto:
 * [Spelling is inconsistent](#spelling-is-inconsistent)
 * [Name order is inconsistent](#name-order-is-inconsistent)
 * [Date formats are inconsistent](#date-formats-are-inconsistent)
+* [Decimal formats are inconsistent](#decimal-formats-are-inconsistent)
 * [Units are not specified](#units-are-not-specified)
+* [Currency indicators are insufficient](#currency-indicators-are-insufficient)
 * [Categories are badly chosen](#categories-are-badly-chosen)
 * [Field names are ambiguous](#field-names-are-ambiguous)
 * [Provenance is not documented](#provenance-is-not-documented)
@@ -138,6 +140,15 @@ If the first one was written by a European and the second one by an American [th
 * [Data were entered by humans](#data-were-entered-by-humans)
 * [Provenance is not documented](#provenance-is-not-documented)
 
+### Decimal formats are inconsistent
+
+Which is the bigger number?
+
+* `1,000`
+* `1.000`
+
+It depends. If they were written by an American, the first (one thousand) is bigger than the second (one); if by a European, the second (one thousand) is bigger than the first (one). Thus, in general, we speak of the [decimal _mark_](https://en.wikipedia.org/wiki/Decimal*mark) rather than a decimal _point_.
+
 ### Units are not specified
 
 Neither `weight` nor `cost` conveys any information about the unit of measurement. Don't be too quick to assume that data produced within the United States are in units of pounds and dollars. Scientific data are often metric. Foreign prices may be specified in their local currency. If the data do not spell out their units, go back to your source and find out. Even if it does spell out its units always be wary of meanings that may have shifted over time. A dollar in 2010 is not a dollar today. And a [ton](https://en.wikipedia.org/wiki/Short_ton) is not a [ton](https://en.wikipedia.org/wiki/Long_ton) nor a [tonne](https://en.wikipedia.org/wiki/Tonne).
@@ -146,6 +157,11 @@ See also:
 
 * [Field names are ambiguous](#field-names-are-ambiguous)
 * [Inflation skews the data](#inflation-skews-the-data)
+* [Currency indicators are insufficient](#currency-indicators-are-insufficient)
+
+### Currency indicators are insufficient
+
+What is this: `$10`? It's ten dollars, but whose? Several countries use the [same name for their currency](https://en.wikipedia.org/wiki/Dollar_sign#Currencies_that_use_the_dollar_or_peso_sign). In some cases the currency sign may have a prefix (e.g., `A$10` for ten Australian dollars), but data meant for local distribution inside a country will often drop the prefix.
 
 ### Categories are badly chosen
 
